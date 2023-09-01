@@ -26,6 +26,7 @@ The intention of the tool is to provide a custom `proxy.pac` template file which
    ````
 1. The generated output will be located in your USERS TEMP directory. `C:\Users\{username}\AppData\Local\Temp\PacUtil\proxy.pac`
 
+
 ### Configuration
 
 The following is the configuration found in the `appsettings.json` file.
@@ -53,6 +54,100 @@ The following is the configuration found in the `appsettings.json` file.
 - **Instance** = < Worldwide | China | USGovDoD | USGovGCCHigh > - The short name of the Office 365 service instance.
 
 - **IncludeIPv6** = < true | false > - Set the value to true to exclude IPv6 addresses from the output if you don't use IPv6 in your network. Default is false.
+
+
+### Template
+
+Here is a snippet of how you would incorporate this into your proxy template file.
+
+```javascript
+function FindProxyForURL(url, host)
+{
+    // ...
+	
+
+    // Office 365
+	if (
+            (
+		        shExpMatch(host, "127.0.0.1")
+		    ) &&
+		    (
+
+/// Office 365 PAC Data ///
+				
+			)
+	    )
+    {
+        return direct;
+    }
+
+
+	// ...
+}
+```
+
+The following is the output file which replaces the token in the template:
+
+```javascript
+function FindProxyForURL(url, host)
+{
+    // ...
+	
+
+    // Office 365
+	if (
+            (
+                // Example of something else from local/network:
+		        shExpMatch(host, "127.0.0.1")
+		    ) &&
+		    (
+                // Event ID 1 - Exchange
+                shExpMatch(host, "outlook.office.com") ||
+                shExpMatch(host, "outlook.office365.com") ||
+
+                isInNet(myIpAddress(),"13.107.6.152","13.107.6.153") ||
+                isInNet(myIpAddress(),"13.107.18.10","13.107.18.11") ||
+                isInNet(myIpAddress(),"13.107.128.0","13.107.131.255") ||
+                isInNet(myIpAddress(),"23.103.160.0","23.103.175.255") ||
+                isInNet(myIpAddress(),"40.96.0.0","40.103.255.255") ||
+                isInNet(myIpAddress(),"40.104.0.0","40.105.255.255") ||
+                isInNet(myIpAddress(),"52.96.0.0","52.99.255.255") ||
+                isInNet(myIpAddress(),"0.0.0.0","255.255.255.255") ||
+                isInNet(myIpAddress(),"132.245.0.0","132.245.255.255") ||
+                isInNet(myIpAddress(),"150.171.32.0","150.171.35.255") ||
+                isInNet(myIpAddress(),"0.0.0.0","255.255.255.255") ||
+
+                // Event ID 2 - Exchange
+                shExpMatch(host, "outlook.office365.com") ||
+                shExpMatch(host, "smtp.office365.com") ||
+				
+                isInNet(myIpAddress(),"13.107.6.152","13.107.6.153") ||
+                isInNet(myIpAddress(),"13.107.18.10","13.107.18.11") ||
+                isInNet(myIpAddress(),"13.107.128.0","13.107.131.255") ||
+                isInNet(myIpAddress(),"23.103.160.0","23.103.175.255") ||
+                isInNet(myIpAddress(),"40.96.0.0","40.103.255.255") ||
+                isInNet(myIpAddress(),"40.104.0.0","40.105.255.255") ||
+                isInNet(myIpAddress(),"52.96.0.0","52.99.255.255") ||
+                isInNet(myIpAddress(),"0.0.0.0","255.255.255.255") ||
+                isInNet(myIpAddress(),"132.245.0.0","132.245.255.255") ||
+                isInNet(myIpAddress(),"150.171.32.0","150.171.35.255") ||
+                isInNet(myIpAddress(),"0.0.0.0","255.255.255.255") ||
+
+                // Event ID 8 - Exchange
+                shExpMatch(host, "*.outlook.com") ||
+                shExpMatch(host, "autodiscover.*.onmicrosoft.com") ||
+
+                // ...
+			)
+	    )
+    {
+        return direct;
+    }
+
+
+	// ...
+}
+```
 
 
 ## References
