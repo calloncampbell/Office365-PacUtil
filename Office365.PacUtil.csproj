@@ -1,0 +1,42 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+	<Company></Company>
+	<Description>Proxy Auto Configuration (PAC) File Utility for Office 365</Description>
+	<Copyright>Copyright © 2023</Copyright>
+	<AssemblyVersion>1.0.0.0</AssemblyVersion>
+	<Product>Proxy Auto Configuration (PAC) File Utility for Office 365</Product>
+	<Authors>Callon Campbell</Authors>
+	<Version>1.0.0.0</Version>
+	<InformationalVersion>1.0.0.0</InformationalVersion>
+	<FileVersion>1.0.0.0</FileVersion>
+	<PackageReleaseNotes>
+	  This is the initial release of the Pac File Utility.
+	</PackageReleaseNotes>
+	<UserSecretsId>c4395102-6ff0-466f-b2d8-58345cb88860</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+	<PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.1" />
+	<PackageReference Include="Microsoft.Extensions.Configuration" Version="6.0.1" />
+	<PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="6.0.0" />
+	<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+	<PackageReference Include="System.CommandLine" Version="2.0.0-beta4.22272.1" />
+	<PackageReference Include="System.CommandLine.Hosting" Version="0.4.0-alpha.22272.1" />
+	<PackageReference Include="System.Configuration.ConfigurationManager" Version="6.0.1" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="proxy-template.pac">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
