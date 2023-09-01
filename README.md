@@ -12,8 +12,8 @@ The intention of the tool is to provide a custom `proxy.pac` template file which
 
 ## Getting started
 
-1. Download the release and unzip to a folder on your computer.
-1. Open up File Expolorer and navigate to the folder where you extracted the zip file.
+1. Download the [release](https://github.com/calloncampbell/Office365-PacUtil/releases) and unzip to a folder on your computer.
+1. Open up File Explorer and navigate to the folder where you extracted the zip file contents.
 1. Open up the `appsettings.json` file and review the configuration and replace the `ClientRequestId` value with a unique GUID for your machine.
 1. Update your custom `proxy.pac` file template with the token marker defined in configuration. For example, `/// Office 365 PAC Data ///` would be added to the template file and this is what's replaced.
 1. You can check for updates by running the following command:
@@ -49,7 +49,7 @@ The following is the configuration found in the `appsettings.json` file.
 
 - **VersionPath** - This is the path and filename to store the latest version from the Office 365 IP and Url Web Service. The version value in this file is based on the format of YYYYMMDDNN, where NN is a natural number incremented if there are multiple versions required to be published on a single day, with 00 representing the first update for a given day.
 
-- **DataPath** - This is the path and filename to store the latest data from the Office 365 IP and Url Web Service, which is then used to generate
+- **DataPath** - This is the path and filename to store the latest data from the Office 365 IP and Url Web Service, which is then used to generate the final output. 
 
 - **Instance** = < Worldwide | China | USGovDoD | USGovGCCHigh > - The short name of the Office 365 service instance.
 
@@ -156,7 +156,6 @@ function FindProxyForURL(url, host)
 
 - For the latest version of the Office 365 URLs and IP address ranges, use https://endpoints.office.com/version/Worldwide?ClientRequestId=b10c5ed1-bad1-445f-b386-b919946339a7
 
-- For the data on the Office 365 URLs and IP address ranges page for firewalls and proxy servers, use https://endpoints.office.com/endpoints/worldwide.
-  - https://endpoints.office.com/endpoints/worldwide?clientrequestid=b10c5ed1-bad1-445f-b386-b919946339a7&NoIPv6=$NoIpv6
+- For the data on the Office 365 URLs and IP address ranges page for firewalls and proxy servers, use https://endpoints.office.com/endpoints/worldwide?clientrequestid=b10c5ed1-bad1-445f-b386-b919946339a7&NoIPv6=$NoIpv6
 
-- To get all the latest changes since July 2018 when the web service was first available, use https://endpoints.office.com/changes/worldwide/0000000000.
+- To get all the latest changes since July 2018 when the web service was first available, use https://endpoints.office.com/changes/worldwide/0000000000?ClientRequestId=b10c5ed1-bad1-445f-b386-b919946339a7.
