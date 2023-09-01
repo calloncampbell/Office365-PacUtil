@@ -12,10 +12,19 @@ The intention of the tool is to provide a custom `proxy.pac` template file which
 
 ## Getting started
 
-1. Download the release.
+1. Download the release and unzip to a folder on your computer.
+1. Open up File Expolorer and navigate to the folder where you extracted the zip file.
 1. Open up the `appsettings.json` file and review the configuration and replace the `ClientRequestId` value with a unique GUID for your machine.
 1. Update your custom `proxy.pac` file template with the token marker defined in configuration. For example, `/// Office 365 PAC Data ///` would be added to the template file and this is what's replaced.
-
+1. You can check for updates by running the following command:
+   ```console
+   .\Office365.PacUtil.exe pac-file update-check"
+   ````
+1. Run the following command to generate the PAC file and update your template file:
+   ```console
+   .\Office365.PacUtil.exe pac-file generate --file "proxy-template.pac"
+   ````
+1. The generated output will be located in your USERS TEMP directory. `C:\Users\{username}\AppData\Local\Temp\PacUtil\proxy.pac`
 
 ### Configuration
 
