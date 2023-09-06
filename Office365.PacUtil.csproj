@@ -15,7 +15,7 @@
 	<InformationalVersion>1.0.0.0</InformationalVersion>
 	<FileVersion>1.0.0.0</FileVersion>
 	<PackageReleaseNotes>
-	  This is the initial release of the Pac File Utility.
+		This is the initial release of the PAC File Utility for Office 365.
 	</PackageReleaseNotes>
 	<UserSecretsId>c4395102-6ff0-466f-b2d8-58345cb88860</UserSecretsId>
   </PropertyGroup>

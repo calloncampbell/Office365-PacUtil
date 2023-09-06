@@ -6,8 +6,8 @@ The intention of the tool is to provide a custom `proxy.pac` template file which
 
 
 ## Requirements
-- [.NET 6]() to run the application.
-- [Visual Studio 2022 Community Edition (free)]() if you want to be able to build the solution.
+- [.NET 6](https://dotnet.microsoft.com/en-us/download/dotnet/6.0) to run the application.
+- [Visual Studio 2022 Community Edition (free)](https://visualstudio.microsoft.com/) if you want to be able to build the solution.
 
 
 ## Getting started
@@ -18,7 +18,7 @@ The intention of the tool is to provide a custom `proxy.pac` template file which
 1. Update your custom `proxy.pac` file template with the token marker defined in configuration. For example, `/// Office 365 PAC Data ///` would be added to the template file and this is what's replaced.
 1. You can check for updates by running the following command:
    ```console
-   .\Office365.PacUtil.exe pac-file update-check"
+   .\Office365.PacUtil.exe pac-file update-check
    ````
 1. Run the following command to generate the PAC file and update your template file:
    ```console
