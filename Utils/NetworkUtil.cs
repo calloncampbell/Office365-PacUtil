@@ -12,14 +12,14 @@ namespace Office365.PacUtil.Utils
         // https://stackoverflow.com/questions/1470792/how-to-calculate-the-ip-range-when-the-ip-address-and-the-netmask-is-given
 
         /// <summary>
-        /// Calculates the IP v4 subnet
+        /// Calculates the IP v4 range
         /// Example
         ///   Input: 192.168.0.1/25
         ///   Result: 192.168.0.1 - 192.168.0.126
         /// </summary>
         /// <param name="ipRangeWithMask">When a IP-Range is written as CIDR Notation: aaa.bbb.ccc.ddd/netmask</param>
         /// <returns></returns>
-        public static Tuple<string, string, string> CalculateIpV4Subnet(string ipRangeWithMask)
+        public static Tuple<string, string, string> CalculateIpV4Range(string ipRangeWithMask)
         {
             // TODO - Fix IP and BITS
             var result = ipRangeWithMask.Split('/');

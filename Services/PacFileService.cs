@@ -13,6 +13,8 @@ namespace Office365.PacUtil.Services
     {
         private static HttpClient _httpClient = new HttpClient();
 
+        public string LatestVersion { get; set; } = "0000000000";
+
         public async Task<int> PacFileActionAsync(PacFileOptions options, CancellationToken token)
         {
             if (options.Action == PacFileActions.UpdateCheck)
@@ -74,23 +76,25 @@ namespace Office365.PacUtil.Services
                 var content = result?.Content == null ? null : await result.Content.ReadAsStringAsync();
 
                 if (content != null) 
-                { 
+                {
+                    LatestVersion = JsonConvert.DeserializeObject<Office365VersionResult>(content).Latest;
                     var currentVersionFile = $"{Path.GetTempPath()}{ConfigurationUtil.VersionPath}";
                     if (File.Exists(currentVersionFile))
                     {
                         var fileContents = await File.ReadAllTextAsync(currentVersionFile, token);
                         if (!String.Equals(content.Replace(" ", ""), fileContents.Replace(" ", ""), StringComparison.InvariantCultureIgnoreCase))
                         {
-                            ConsoleUtil.WriteInfo($"A new version is available - '{JsonConvert.DeserializeObject<Office365VersionResult>(content).Latest}'.");
+
+                            ConsoleUtil.WriteInfo($"A new version is available - '{LatestVersion}'.");
                             await File.WriteAllTextAsync(currentVersionFile, content, token);
                             return true;
                         }
 
-                        ConsoleUtil.WriteInfo($"You already have the current version - '{JsonConvert.DeserializeObject<Office365VersionResult>(content).Latest}'.");
+                        ConsoleUtil.WriteInfo($"You already have the current version - '{LatestVersion}'.");
                         return false;
                     }
 
-                    ConsoleUtil.WriteInfo($"The current version is '{JsonConvert.DeserializeObject<Office365VersionResult>(content).Latest}'.");
+                    ConsoleUtil.WriteInfo($"The current version is '{LatestVersion}'.");
                 }
             }
             catch (Exception ex)
@@ -110,7 +114,7 @@ namespace Office365.PacUtil.Services
             try
             {
                 var updateAvailable = await CheckForUpdatesAsync(token);
-#if debug
+#if !DEBUG
                 if (!updateAvailable)
                 {
                     return;
@@ -153,7 +157,7 @@ namespace Office365.PacUtil.Services
                         {
                             foreach (var ipItem in item["ips"].ToArray())
                             {
-                                var ipRangeResult = NetworkUtil.CalculateIpV4Subnet(ipItem.ToString());
+                                var ipRangeResult = NetworkUtil.CalculateIpV4Range(ipItem.ToString());
                                 sb.AppendLine($"                isInNet(myIpAddress(),\"{ipRangeResult.Item2}\",\"{ipRangeResult.Item3}\") ||");
                             }
 
@@ -171,7 +175,7 @@ namespace Office365.PacUtil.Services
                     var outputFile = templateFile.Replace(ConfigurationUtil.TemplateFileTokenMarker, finalText);
 
                     // Output generated file into temp PacUtil location
-                    var outputPath = $"{Path.GetTempPath()}PacUtil\\proxy.pac";
+                    var outputPath = $"{Path.GetTempPath()}PacUtil\\proxy-{LatestVersion}.pac";
                     await File.WriteAllTextAsync(outputPath, outputFile, token);
                     ConsoleUtil.WriteInfo($"Successfully generated new proxy file: {outputPath}");
                 }
