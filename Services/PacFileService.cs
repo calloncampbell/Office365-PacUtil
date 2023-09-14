@@ -94,6 +94,7 @@ namespace Office365.PacUtil.Services
                         return false;
                     }
 
+                    await File.WriteAllTextAsync(currentVersionFile, content, token);
                     ConsoleUtil.WriteInfo($"The current version is '{LatestVersion}'.");
                 }
             }
