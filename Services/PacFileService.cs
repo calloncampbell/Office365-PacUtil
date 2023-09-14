@@ -157,8 +157,8 @@ namespace Office365.PacUtil.Services
                         {
                             foreach (var ipItem in item["ips"].ToArray())
                             {
-                                var ipRangeResult = NetworkUtil.CalculateIpV4Range(ipItem.ToString());
-                                sb.AppendLine($"                isInNet(myIpAddress(),\"{ipRangeResult.Item2}\",\"{ipRangeResult.Item3}\") ||");
+                                var ipRangeResult = NetworkUtil.CalculateIpV4Subnet(ipItem.ToString());
+                                sb.AppendLine($"                isInNet(myIpAddress(),\"{ipRangeResult.Item1}\",\"{ipRangeResult.Item2}\") ||");
                             }
 
                             sb.AppendLine();

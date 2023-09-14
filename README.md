@@ -23,7 +23,7 @@ The intention of the tool is to provide a custom `proxy.pac` template file which
 1. Run the following command to generate the PAC file and update your template file:
    ```console
    .\Office365.PacUtil.exe pac-file generate --file "proxy-template.pac"
-   ````
+   ```
 1. The generated output will be located in your USERS TEMP directory. `C:\Users\{username}\AppData\Local\Temp\PacUtil\proxy.pac`
 
 
@@ -105,33 +105,33 @@ function FindProxyForURL(url, host)
                 shExpMatch(host, "outlook.office.com") ||
                 shExpMatch(host, "outlook.office365.com") ||
 
-                isInNet(myIpAddress(),"13.107.6.152","13.107.6.153") ||
-                isInNet(myIpAddress(),"13.107.18.10","13.107.18.11") ||
-                isInNet(myIpAddress(),"13.107.128.0","13.107.131.255") ||
-                isInNet(myIpAddress(),"23.103.160.0","23.103.175.255") ||
-                isInNet(myIpAddress(),"40.96.0.0","40.103.255.255") ||
-                isInNet(myIpAddress(),"40.104.0.0","40.105.255.255") ||
-                isInNet(myIpAddress(),"52.96.0.0","52.99.255.255") ||
-                isInNet(myIpAddress(),"0.0.0.0","255.255.255.255") ||
-                isInNet(myIpAddress(),"132.245.0.0","132.245.255.255") ||
-                isInNet(myIpAddress(),"150.171.32.0","150.171.35.255") ||
-                isInNet(myIpAddress(),"0.0.0.0","255.255.255.255") ||
+                isInNet(myIpAddress(),"13.107.6.152","255.255.255.254") ||
+                isInNet(myIpAddress(),"13.107.18.10","255.255.255.254") ||
+                isInNet(myIpAddress(),"13.107.128.0","255.255.252.0") ||
+                isInNet(myIpAddress(),"23.103.160.0","255.255.240.0") ||
+                isInNet(myIpAddress(),"40.96.0.0","255.248.0.0") ||
+                isInNet(myIpAddress(),"40.104.0.0","255.254.0.0") ||
+                isInNet(myIpAddress(),"52.96.0.0","255.252.0.0") ||
+                isInNet(myIpAddress(),"131.253.33.215","255.255.255.255") ||
+                isInNet(myIpAddress(),"132.245.0.0","255.255.0.0") ||
+                isInNet(myIpAddress(),"150.171.32.0","255.255.252.0") ||
+                isInNet(myIpAddress(),"204.79.197.215","255.255.255.255") ||
 
                 // Event ID 2 - Exchange
                 shExpMatch(host, "outlook.office365.com") ||
                 shExpMatch(host, "smtp.office365.com") ||
-				
-                isInNet(myIpAddress(),"13.107.6.152","13.107.6.153") ||
-                isInNet(myIpAddress(),"13.107.18.10","13.107.18.11") ||
-                isInNet(myIpAddress(),"13.107.128.0","13.107.131.255") ||
-                isInNet(myIpAddress(),"23.103.160.0","23.103.175.255") ||
-                isInNet(myIpAddress(),"40.96.0.0","40.103.255.255") ||
-                isInNet(myIpAddress(),"40.104.0.0","40.105.255.255") ||
-                isInNet(myIpAddress(),"52.96.0.0","52.99.255.255") ||
-                isInNet(myIpAddress(),"0.0.0.0","255.255.255.255") ||
-                isInNet(myIpAddress(),"132.245.0.0","132.245.255.255") ||
-                isInNet(myIpAddress(),"150.171.32.0","150.171.35.255") ||
-                isInNet(myIpAddress(),"0.0.0.0","255.255.255.255") ||
+
+                isInNet(myIpAddress(),"13.107.6.152","255.255.255.254") ||
+                isInNet(myIpAddress(),"13.107.18.10","255.255.255.254") ||
+                isInNet(myIpAddress(),"13.107.128.0","255.255.252.0") ||
+                isInNet(myIpAddress(),"23.103.160.0","255.255.240.0") ||
+                isInNet(myIpAddress(),"40.96.0.0","255.248.0.0") ||
+                isInNet(myIpAddress(),"40.104.0.0","255.254.0.0") ||
+                isInNet(myIpAddress(),"52.96.0.0","255.252.0.0") ||
+                isInNet(myIpAddress(),"131.253.33.215","255.255.255.255") ||
+                isInNet(myIpAddress(),"132.245.0.0","255.255.0.0") ||
+                isInNet(myIpAddress(),"150.171.32.0","255.255.252.0") ||
+                isInNet(myIpAddress(),"204.79.197.215","255.255.255.255") ||
 
                 // Event ID 8 - Exchange
                 shExpMatch(host, "*.outlook.com") ||
