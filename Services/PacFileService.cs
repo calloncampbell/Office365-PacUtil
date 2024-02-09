@@ -64,46 +64,58 @@ namespace Office365.PacUtil.Services
 
         private async Task<bool> CheckForUpdatesAsync(CancellationToken token)
         {
-            ConsoleUtil.WriteMessage("Checking for updates...");
+            ConsoleUtil.WriteMessage("Checking for Office 365 IP Address and URL updates...");
 
             ValidateConfiguration();
 
             try
             {
                 var url = $"{ConfigurationUtil.WebServiceRootUrl}/version/{ConfigurationUtil.Instance}/?clientrequestid={ConfigurationUtil.ClientRequestId}";
+
+                ConsoleUtil.WriteMessage($"Making a REST API call to URL '{url}'...");
+
                 var request = new HttpRequestMessage(HttpMethod.Get, url);
                 var result = await _httpClient.SendAsync(request);
                 var content = result?.Content == null ? null : await result.Content.ReadAsStringAsync();
 
-                if (content != null) 
+                if (string.IsNullOrWhiteSpace(content))
                 {
-                    LatestVersion = JsonConvert.DeserializeObject<Office365VersionResult>(content).Latest;
-                    var currentVersionFile = $"{Path.GetTempPath()}{ConfigurationUtil.VersionPath}";
-                    if (File.Exists(currentVersionFile))
+                    throw new NullReferenceException("Office 365 Endpoint API data is null. Please check the configuration and try again.");
+                }
+
+                LatestVersion = JsonConvert.DeserializeObject<Office365VersionResult>(content).Latest;
+                var currentVersionFile = $"{Path.GetTempPath()}{ConfigurationUtil.VersionPath}";
+                if (File.Exists(currentVersionFile))
+                {
+                    var fileContents = await File.ReadAllTextAsync(currentVersionFile, token);
+                    if (!String.Equals(content.Replace(" ", ""), fileContents.Replace(" ", ""), StringComparison.InvariantCultureIgnoreCase))
                     {
-                        var fileContents = await File.ReadAllTextAsync(currentVersionFile, token);
-                        if (!String.Equals(content.Replace(" ", ""), fileContents.Replace(" ", ""), StringComparison.InvariantCultureIgnoreCase))
-                        {
 
-                            ConsoleUtil.WriteInfo($"A new version is available - '{LatestVersion}'.");
-                            await File.WriteAllTextAsync(currentVersionFile, content, token);
-                            return true;
-                        }
-
-                        ConsoleUtil.WriteInfo($"You already have the current version - '{LatestVersion}'.");
-                        return false;
+                        ConsoleUtil.WriteInfo($"A new version is available - '{LatestVersion}'.");
+                        await File.WriteAllTextAsync(currentVersionFile, content, token);
+                        return true;
                     }
 
-                    await File.WriteAllTextAsync(currentVersionFile, content, token);
-                    ConsoleUtil.WriteInfo($"The current version is '{LatestVersion}'.");
+                    ConsoleUtil.WriteInfo($"You already have the current version - '{LatestVersion}'.");
+                    return false;
                 }
+
+                var path = Path.GetDirectoryName(currentVersionFile);
+                if (string.IsNullOrWhiteSpace(path))
+                {
+                    throw new ArgumentNullException(nameof(path));
+                }
+
+                Directory.CreateDirectory(path);
+                await File.WriteAllTextAsync(currentVersionFile, content, token);
+                ConsoleUtil.WriteInfo($"The current version is '{LatestVersion}'.");
+                return true;
             }
             catch (Exception ex)
             {
                 ConsoleUtil.WriteError($"An exception occurred during update check. Details: {ex.Message}", ex);
-            }
-
-            return false;
+                return false;
+            }            
         }
 
         private async Task CreatePacFileAsync(PacFileOptions options, CancellationToken token)
@@ -128,6 +140,8 @@ namespace Office365.PacUtil.Services
                     url = $"{url}&NoIPv6=$NoIpv6";
                 }
 
+                ConsoleUtil.WriteMessage("Downloading updated Office 365 IP Address and URLs...");
+
                 var request = new HttpRequestMessage(HttpMethod.Get, url);
                 var result = await _httpClient.SendAsync(request);
                 var content = result?.Content == null ? null : await result.Content.ReadAsStringAsync();
@@ -136,6 +150,8 @@ namespace Office365.PacUtil.Services
                 {
                     var currentDataFile = $"{Path.GetTempPath()}{ConfigurationUtil.DataPath}";
                     await File.WriteAllTextAsync(currentDataFile, content, token);
+
+                    ConsoleUtil.WriteMessage("Processing data for Office 365 IP Address and URLs...");
 
                     StringBuilder sb = new StringBuilder();
                     var list = JsonConvert.DeserializeObject<JArray>(content);
@@ -178,7 +194,7 @@ namespace Office365.PacUtil.Services
                     // Output generated file into temp PacUtil location
                     var outputPath = $"{Path.GetTempPath()}PacUtil\\proxy-{LatestVersion}.pac";
                     await File.WriteAllTextAsync(outputPath, outputFile, token);
-                    ConsoleUtil.WriteInfo($"Successfully generated new proxy file: {outputPath}");
+                    ConsoleUtil.WriteInfo($"Successfully generated new proxy PAC file: {outputPath}");
                 }
             }
             catch (Exception ex)
