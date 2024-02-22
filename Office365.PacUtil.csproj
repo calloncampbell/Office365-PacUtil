@@ -7,15 +7,16 @@
     <Nullable>enable</Nullable>
 	<Company></Company>
 	<Description>Proxy Auto Configuration (PAC) File Utility for Office 365</Description>
-	<Copyright>Copyright © 2023</Copyright>
-	<AssemblyVersion>1.0.1.0</AssemblyVersion>
+	<Copyright>Copyright © 2024</Copyright>
+	<AssemblyVersion>1.1.0.0</AssemblyVersion>
 	<Product>Proxy Auto Configuration (PAC) File Utility for Office 365</Product>
 	<Authors>Callon Campbell</Authors>
-	<Version>1.0.1.0</Version>
-	<InformationalVersion>1.0.1.0</InformationalVersion>
-	<FileVersion>1.0.1.0</FileVersion>
+	<Version>1.1.0.0</Version>
+	<InformationalVersion>1.1.0.0</InformationalVersion>
+	<FileVersion>1.1.0.0</FileVersion>
 	<PackageReleaseNotes>
-		This is the initial release of the PAC File Utility for Office 365.
+		- Refinements to the output file to include the version details.
+		- Bug fixes.
 	</PackageReleaseNotes>
 	<UserSecretsId>c4395102-6ff0-466f-b2d8-58345cb88860</UserSecretsId>
   </PropertyGroup>

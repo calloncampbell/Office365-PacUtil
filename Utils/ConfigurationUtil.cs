@@ -55,9 +55,14 @@ namespace Office365.PacUtil.Utils
             get { return Config[$"{SectionName}:ClientRequestId"]; }
         }
 
-        public static string TemplateFileTokenMarker
+        public static string TemplateFileTokenStartMarker
         {
-            get { return Config[$"{SectionName}:TemplateFileTokenMarker"]; }
-        }        
+            get { return Config[$"{SectionName}:TemplateFileTokenStartMarker"]; }
+        }
+
+        public static string TemplateFileTokenEndMarker
+        {
+            get { return Config[$"{SectionName}:TemplateFileTokenEndMarker"]; }
+        }
     }
 }

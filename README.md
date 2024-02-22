@@ -24,6 +24,10 @@ The intention of the tool is to provide a custom `proxy.pac` template file which
    ```console
    .\Office365.PacUtil.exe pac-file generate --file "proxy-template.pac"
    ```
+1. Optionally, you can force the file generation even if no changes were detected by running the following command:
+   ```console
+   .\Office365.PacUtil.exe pac-file generate --file "proxy-template.pac" --force
+   ```
 1. The generated output will be located in your USERS TEMP directory. `C:\Users\{username}\AppData\Local\Temp\PacUtil\proxy.pac`
 
 
@@ -34,7 +38,8 @@ The following is the configuration found in the `appsettings.json` file.
 ```json
   "Office365IpUrlWebService": {
     "ClientRequestId": "GENERATE_YOUR_UNIQURE_GUID",
-    "TemplateFileTokenMarker": "/// Office 365 PAC Data ///",
+    "TemplateFileTokenStartMarker": "/// START Office 365 PAC Data ///",
+    "TemplateFileTokenEndMarker": "/// END Office 365 PAC Data ///",
     "WebServiceRootUrl": "https://endpoints.office.com",
     "VersionPath": "PacUtil\\O365_endpoints_latestversion.json",
     "DataPath": "PacUtil\\O365_endpoints_data.json",
@@ -43,7 +48,7 @@ The following is the configuration found in the `appsettings.json` file.
   }
 ```
 
-- **ClientRequestId** = < guid > - A required GUID that you generate for client association. Generate a unique GUID for each machine that calls the web service. GUID format is xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx, where x represents a hexadecimal number.
+- **ClientRequestId** = < guid > - A required GUID that you generate for client association. Generate a unique GUID for each machine that calls the web service. GUID format is xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx, where x represents a hexadecimal number. You can use https://guidgenerator.com/ to generate one.
 
 - **TemplateFileTokenMarker** - The token marker to insert into your PAC file template which is replaced by the content generated from this tool.
 
@@ -73,7 +78,11 @@ function FindProxyForURL(url, host)
 		    ) &&
 		    (
 
-/// Office 365 PAC Data ///
+/// START Office 365 PAC Data ///
+
+ /// Generated content goes here
+
+/// END Office 365 PAC Data ///
 				
 			)
 	    )
@@ -101,6 +110,11 @@ function FindProxyForURL(url, host)
 		        shExpMatch(host, "127.0.0.1")
 		    ) &&
 		    (
+
+/// START Office 365 PAC Data ///
+// Microsoft 365 URLs and IP address data version: 2024013000
+// URL to compare version 2024013000 with the latest: https://endpoints.office.com/changes/Worldwide/2024013000?clientrequestid=635f7b4a-ad6c-4ff2-bf39-756935dff84c
+
                 // Event ID 1 - Exchange
                 shExpMatch(host, "outlook.office.com") ||
                 shExpMatch(host, "outlook.office365.com") ||
@@ -138,6 +152,9 @@ function FindProxyForURL(url, host)
                 shExpMatch(host, "autodiscover.*.onmicrosoft.com") ||
 
                 // ...
+
+/// END Office 365 PAC Data ///
+
 			)
 	    )
     {
@@ -159,3 +176,7 @@ function FindProxyForURL(url, host)
 - For the data on the Office 365 URLs and IP address ranges page for firewalls and proxy servers, use https://endpoints.office.com/endpoints/worldwide?clientrequestid=b10c5ed1-bad1-445f-b386-b919946339a7&NoIPv6=$NoIpv6
 
 - To get all the latest changes since July 2018 when the web service was first available, use https://endpoints.office.com/changes/worldwide/0000000000?ClientRequestId=b10c5ed1-bad1-445f-b386-b919946339a7.
+
+- To get a listing of all versions, use https://endpoints.office.com/version/Worldwide?AllVersions=true&ClientRequestId=b10c5ed1-bad1-445f-b386-b919946339a7.
+
+- To see all the changes from a specific version, for example version `2023073100` we want to use this url with the version string after `/worldwide/{version}?` https://endpoints.office.com/changes/worldwide/2023073100?ClientRequestId=b10c5ed1-bad1-445f-b386-b919946339a7

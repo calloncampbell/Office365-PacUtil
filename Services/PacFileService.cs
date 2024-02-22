@@ -3,8 +3,11 @@ using Newtonsoft.Json.Linq;
 using Office365.PacUtil.Models;
 using Office365.PacUtil.Options;
 using Office365.PacUtil.Utils;
+using System;
 using System.Configuration;
+using System.Net;
 using System.Text;
+using static System.Net.WebRequestMethods;
 using File = System.IO.File;
 
 namespace Office365.PacUtil.Services
@@ -36,30 +39,48 @@ namespace Office365.PacUtil.Services
 
         private void ValidateConfiguration()
         {
-            if (ConfigurationUtil.ClientRequestId is null)
+            if (string.IsNullOrWhiteSpace(ConfigurationUtil.ClientRequestId))
             {
-                throw new ConfigurationErrorsException("Missing configuration for 'ClientRequestId");
+                throw new ConfigurationErrorsException("Missing configuration for 'ClientRequestId'");
             }
 
-            if (ConfigurationUtil.WebServiceRootUrl is null)
+            if (!string.IsNullOrWhiteSpace(ConfigurationUtil.ClientRequestId))
             {
-                throw new ConfigurationErrorsException("Missing configuration for 'WebServiceRootUrl");
+                if (!Guid.TryParse(ConfigurationUtil.ClientRequestId, out var instanceGuid))
+                {
+                    throw new ConfigurationErrorsException("Invalid configuration value for 'ClientRequestId'. Please use a properly formatted GUID - xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx. The README.md file has more details and samples.");
+                }
             }
 
-            if (ConfigurationUtil.VersionPath is null)
+            if (string.IsNullOrWhiteSpace(ConfigurationUtil.TemplateFileTokenStartMarker))
             {
-                throw new ConfigurationErrorsException("Missing configuration for 'VersionPath");
+                throw new ConfigurationErrorsException("Missing configuration for 'TemplateFileTokenStartMarker'");
             }
 
-            if (ConfigurationUtil.DataPath is null)
+            if (string.IsNullOrWhiteSpace(ConfigurationUtil.TemplateFileTokenEndMarker))
             {
-                throw new ConfigurationErrorsException("Missing configuration for 'DataPath");
+                throw new ConfigurationErrorsException("Missing configuration for 'TemplateFileTokenEndMarker'");
             }
 
-            if (ConfigurationUtil.Instance is null)
+            if (string.IsNullOrWhiteSpace(ConfigurationUtil.WebServiceRootUrl))
             {
-                throw new ConfigurationErrorsException("Missing configuration for 'Instance");
+                throw new ConfigurationErrorsException("Missing configuration for 'WebServiceRootUrl'");
             }
+
+            if (string.IsNullOrWhiteSpace(ConfigurationUtil.VersionPath))
+            {
+                throw new ConfigurationErrorsException("Missing configuration for 'VersionPath'");
+            }
+
+            if (string.IsNullOrWhiteSpace(ConfigurationUtil.DataPath))
+            {
+                throw new ConfigurationErrorsException("Missing configuration for 'DataPath'");
+            }
+
+            if (string.IsNullOrWhiteSpace(ConfigurationUtil.Instance))
+            {
+                throw new ConfigurationErrorsException("Missing configuration for 'Instance'");
+            }            
         }
 
         private async Task<bool> CheckForUpdatesAsync(CancellationToken token)
@@ -128,7 +149,7 @@ namespace Office365.PacUtil.Services
             {
                 var updateAvailable = await CheckForUpdatesAsync(token);
 #if !DEBUG
-                if (!updateAvailable)
+                if (!updateAvailable && !options.Force)
                 {
                     return;
                 }
@@ -153,7 +174,14 @@ namespace Office365.PacUtil.Services
 
                     ConsoleUtil.WriteMessage("Processing data for Office 365 IP Address and URLs...");
 
+                    var changesUrl = $"{ConfigurationUtil.WebServiceRootUrl}/changes/{ConfigurationUtil.Instance}/{LatestVersion}?clientrequestid={ConfigurationUtil.ClientRequestId}";
+
                     StringBuilder sb = new StringBuilder();
+                    sb.AppendLine(); 
+                    sb.AppendLine($"// Microsoft 365 URLs and IP address data version: {LatestVersion}");
+                    sb.AppendLine($"// URL to compare version {LatestVersion} with the latest: {changesUrl}");
+                    sb.AppendLine();
+
                     var list = JsonConvert.DeserializeObject<JArray>(content);
                     
                     foreach (var item in list)
@@ -179,6 +207,7 @@ namespace Office365.PacUtil.Services
                             }
 
                             sb.AppendLine();
+                            sb.AppendLine();
                         }
                     }
 
@@ -186,10 +215,20 @@ namespace Office365.PacUtil.Services
                     var finalText = sb.ToString();
                     finalText.TrimEnd();
                     finalText = finalText.Remove(finalText.Length - 6, 6);
+                    finalText = finalText + "\n";
+
+                    // Define your markers
+                    string startMarker = ConfigurationUtil.TemplateFileTokenStartMarker;
+                    string endMarker = ConfigurationUtil.TemplateFileTokenEndMarker;
 
                     // Merge into the template
                     var templateFile = await File.ReadAllTextAsync($"{options.File.FullName}", token);
-                    var outputFile = templateFile.Replace(ConfigurationUtil.TemplateFileTokenMarker, finalText);
+                    //var outputFile = templateFile.Replace(ConfigurationUtil.TemplateFileTokenMarker, finalText);
+
+                    // Replace the old contents between the markes with the newly generated content
+                    int startIndex = templateFile.IndexOf(startMarker) + startMarker.Length;
+                    int endIndex = templateFile.IndexOf(endMarker, startIndex);
+                    var outputFile = templateFile.Remove(startIndex, endIndex - startIndex).Insert(startIndex, finalText);
 
                     // Output generated file into temp PacUtil location
                     var outputPath = $"{Path.GetTempPath()}PacUtil\\proxy-{LatestVersion}.pac";

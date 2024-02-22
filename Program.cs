@@ -58,6 +58,10 @@ namespace Office365.PacUtil
                 new Option<FileInfo>(new []{"--file", "-f"}, "The PAC file template to be used in file generation.")
                 {
                     IsRequired = true,
+                },
+                new Option<bool>(new []{"--force"}, "Force the PAC file generation.")
+                {
+                    IsRequired = false,
                 }
             };
             commandPacFileUpdate.Handler = CommandHandler.Create<PacFileOptions, IHost, CancellationToken>(PacCommandFileUpdate);
@@ -65,7 +69,7 @@ namespace Office365.PacUtil
 
             // Sub-Command: status
             Command commandPacFileStatus = new Command("update-check", "Checks for updates from Microsoft.");
-            commandPacFileStatus.Handler = CommandHandler.Create<PacFileOptions, IHost, CancellationToken   >(PacCommandStatus);
+            commandPacFileStatus.Handler = CommandHandler.Create<PacFileOptions, IHost, CancellationToken>(PacCommandStatus);
             commandPacFile.AddCommand(commandPacFileStatus);
 
             root.AddCommand(commandPacFile);
