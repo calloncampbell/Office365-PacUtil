@@ -1,36 +1,34 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-	<Company></Company>
-	<Description>Proxy Auto Configuration (PAC) File Utility for Office 365</Description>
-	<Copyright>Copyright © 2024</Copyright>
-	<AssemblyVersion>1.1.0.0</AssemblyVersion>
-	<Product>Proxy Auto Configuration (PAC) File Utility for Office 365</Product>
-	<Authors>Callon Campbell</Authors>
-	<Version>1.1.0.0</Version>
-	<InformationalVersion>1.1.0.0</InformationalVersion>
-	<FileVersion>1.1.0.0</FileVersion>
-	<PackageReleaseNotes>
+    <Company>
+    </Company>
+    <Description>Proxy Auto Configuration (PAC) File Utility for Office 365</Description>
+    <Copyright>Copyright © 2024</Copyright>
+    <AssemblyVersion>1.1.0.0</AssemblyVersion>
+    <Product>Proxy Auto Configuration (PAC) File Utility for Office 365</Product>
+    <Authors>Callon Campbell</Authors>
+    <Version>1.1.0.0</Version>
+    <InformationalVersion>1.1.0.0</InformationalVersion>
+    <FileVersion>1.1.0.0</FileVersion>
+    <PackageReleaseNotes>
 		- Refinements to the output file to include the version details.
 		- Bug fixes.
 	</PackageReleaseNotes>
-	<UserSecretsId>c4395102-6ff0-466f-b2d8-58345cb88860</UserSecretsId>
+    <UserSecretsId>c4395102-6ff0-466f-b2d8-58345cb88860</UserSecretsId>
   </PropertyGroup>
-
   <ItemGroup>
-	<PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.1" />
-	<PackageReference Include="Microsoft.Extensions.Configuration" Version="6.0.1" />
-	<PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="6.0.0" />
-	<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-	<PackageReference Include="System.CommandLine" Version="2.0.0-beta4.22272.1" />
-	<PackageReference Include="System.CommandLine.Hosting" Version="0.4.0-alpha.22272.1" />
-	<PackageReference Include="System.Configuration.ConfigurationManager" Version="6.0.1" />
+    <PackageReference Include="System.CommandLine" Version="2.0.0-beta4.22272.1" />
+    <PackageReference Include="System.CommandLine.Hosting" Version="0.4.0-alpha.22272.1" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="8.0.0" />
   </ItemGroup>
-  
   <ItemGroup>
     <None Update="appsettings.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -39,5 +37,4 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
-
 </Project>
