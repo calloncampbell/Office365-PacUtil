@@ -50,10 +50,10 @@ namespace Office365.PacUtil
             var root = new RootCommand("Proxy Auto Configuration (PAC) File Utility for Office 365.");
 
             // Command: pac-file
-            var commandPacFile = new Command("pac-file", "Command to work with the Office 365 IP and Url web service");
+            var commandPacFile = new Command("pac-file", "Command to work with the Office 365 IP and Url web service.");
 
             // Sub-Command: generate
-            Command commandPacFileUpdate = new Command("generate", "Generate the PAC File from template file.")
+            Command commandPacFileUpdate = new Command("generate", "Generate the PAC File from template file.\nExample:\n   .\\Office365.PacUtil.exe pac-file generate --file \"proxy_template.pac\"")
             {
                 new Option<FileInfo>(new []{"--file", "-f"}, "The PAC file template to be used in file generation.")
                 {
@@ -67,10 +67,11 @@ namespace Office365.PacUtil
             commandPacFileUpdate.Handler = CommandHandler.Create<PacFileOptions, IHost, CancellationToken>(PacCommandFileUpdate);
             commandPacFile.AddCommand(commandPacFileUpdate);
 
-            // Sub-Command: status
-            Command commandPacFileStatus = new Command("update-check", "Checks for updates from Microsoft.");
+            // Sub-Command: update-check
+            Command commandPacFileStatus = new Command("update-check", "Checks for updates from Microsoft.\nExample:\n   .\\Office365.PacUtil.exe pac-file update-check");
             commandPacFileStatus.Handler = CommandHandler.Create<PacFileOptions, IHost, CancellationToken>(PacCommandStatus);
             commandPacFile.AddCommand(commandPacFileStatus);
+
 
             root.AddCommand(commandPacFile);
 
