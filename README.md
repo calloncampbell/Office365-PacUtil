@@ -63,9 +63,9 @@ The following is the configuration found in the `appsettings.json` file.
 
 - **WebServiceRootUrl** - This is the Microsoft Office 365 IP Address and URL web service URL.
 
-- **OutputPath** - This is the output path if not using the Users Temp Path.
+- **OutputPath** - This is the output path if not using the Users Temp Path. Default is `C:\\Temp`.
 
-- **OverrideOutputPathWithUserTempPath** - Enable this if you want to use the `OutputPath` value instead of the Users Temp Path. Default is false.
+- **OverrideOutputPathWithUserTempPath** - Enable this if you want to use the Users Temp Path instead of the `OutputPath` value. Default is `true`.
 
 - **VersionPath** - This is the path and filename to store the latest version from the Office 365 IP and Url Web Service. The version value in this file is based on the format of YYYYMMDDNN, where NN is a natural number incremented if there are multiple versions required to be published on a single day, with 00 representing the first update for a given day.
 
@@ -73,7 +73,7 @@ The following is the configuration found in the `appsettings.json` file.
 
 - **Instance** = < Worldwide | China | USGovDoD | USGovGCCHigh > - The short name of the Office 365 service instance.
 
-- **IncludeIPv6** = < true | false > - Set the value to true to exclude IPv6 addresses from the output if you don't use IPv6 in your network. Default is false.
+- **IncludeIPv6** = < true | false > - Set the value to true to exclude IPv6 addresses from the output if you don't use IPv6 in your network. Default is `false`.
 
 
 ### Output
