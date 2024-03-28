@@ -64,5 +64,15 @@ namespace Office365.PacUtil.Utils
         {
             get { return Config[$"{SectionName}:TemplateFileTokenEndMarker"]; }
         }
+
+        public static string OutputPath
+        {
+            get { return Config[$"{SectionName}:OutputPath"]; }
+        }
+
+        public static bool OverrideOutputPathWithUserTempPath
+        {
+            get { return bool.Parse(Config[$"{SectionName}:OverrideOutputPathWithUserTempPath"]); }
+        }
     }
 }

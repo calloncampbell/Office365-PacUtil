@@ -6,8 +6,13 @@ The intention of the tool is to provide a custom `proxy.pac` template file which
 
 
 ## Requirements
-- [.NET 6](https://dotnet.microsoft.com/en-us/download/dotnet/6.0) to run the application.
-- [Visual Studio 2022 Community Edition (free)](https://visualstudio.microsoft.com/) if you want to be able to build the solution.
+
+- [.NET 8](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) to run the application.
+- [Visual Studio 2022](https://visualstudio.microsoft.com/) if you want to be able to build the solution.
+
+
+## Networking requirements
+- Outbound internet access to the Office 365 IP Address and URL web service. See reference section for documentation.
 
 
 ## Getting started
@@ -41,8 +46,10 @@ The following is the configuration found in the `appsettings.json` file.
     "TemplateFileTokenStartMarker": "/// START Office 365 PAC Data ///",
     "TemplateFileTokenEndMarker": "/// END Office 365 PAC Data ///",
     "WebServiceRootUrl": "https://endpoints.office.com",
-    "VersionPath": "PacUtil\\O365_endpoints_latestversion.json",
-    "DataPath": "PacUtil\\O365_endpoints_data.json",
+    "OutputPath": "C:\\Temp",
+    "OverrideOutputPathWithUserTempPath": true,
+    "VersionPath": "O365_endpoints_latestversion.json",
+    "DataPath": "O365_endpoints_data.json",
     "Instance": "Worldwide",
     "IncludeIPv6": false
   }
@@ -50,7 +57,15 @@ The following is the configuration found in the `appsettings.json` file.
 
 - **ClientRequestId** = < guid > - A required GUID that you generate for client association. Generate a unique GUID for each machine that calls the web service. GUID format is xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx, where x represents a hexadecimal number. You can use https://guidgenerator.com/ to generate one.
 
-- **TemplateFileTokenMarker** - The token marker to insert into your PAC file template which is replaced by the content generated from this tool.
+- **TemplateFileTokenStartMarker** - The start token marker. Used to determine the starting block of text to replace with the generated contents from this tool.
+
+- **TemplateFileTokenEndMarker** - The end token marker. Used to determine the ending block of text to replace with the generated contents from this tool.
+
+- **WebServiceRootUrl** - This is the Microsoft Office 365 IP Address and URL web service URL.
+
+- **OutputPath** - This is the output path if not using the Users Temp Path.
+
+- **OverrideOutputPathWithUserTempPath** - Enable this if you want to use the `OutputPath` value instead of the Users Temp Path. Default is false.
 
 - **VersionPath** - This is the path and filename to store the latest version from the Office 365 IP and Url Web Service. The version value in this file is based on the format of YYYYMMDDNN, where NN is a natural number incremented if there are multiple versions required to be published on a single day, with 00 representing the first update for a given day.
 
@@ -59,6 +74,13 @@ The following is the configuration found in the `appsettings.json` file.
 - **Instance** = < Worldwide | China | USGovDoD | USGovGCCHigh > - The short name of the Office 365 service instance.
 
 - **IncludeIPv6** = < true | false > - Set the value to true to exclude IPv6 addresses from the output if you don't use IPv6 in your network. Default is false.
+
+
+### Output
+
+- The application uses the Users Temp Path by default, but supports an override to a custom path if needed.
+- The application saves generated content and file downloads from the Microsoft Office 365 IP Address and URL web service in a sub-folder called `PacUtil`. 
+- The application will create any directories that dont exist.
 
 
 ### Template

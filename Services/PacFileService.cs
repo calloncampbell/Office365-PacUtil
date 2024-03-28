@@ -17,6 +17,7 @@ namespace Office365.PacUtil.Services
         private static HttpClient _httpClient = new HttpClient();
 
         public string LatestVersion { get; set; } = "0000000000";
+        public const string OutputSubfolder = "PacUtil";
 
         public async Task<int> PacFileActionAsync(PacFileOptions options, CancellationToken token)
         {
@@ -35,6 +36,19 @@ namespace Office365.PacUtil.Services
             }
 
             return 0;
+        }
+
+        private string GetOutputPath()
+        {
+            var path = string.Empty;
+            if (ConfigurationUtil.OverrideOutputPathWithUserTempPath)
+            {
+                path = $"{Path.GetTempPath()}{OutputSubfolder}";
+                return path;
+            }
+
+            path = $"{ConfigurationUtil.OutputPath}\\{OutputSubfolder}";           
+            return path;
         }
 
         private void ValidateConfiguration()
@@ -60,6 +74,11 @@ namespace Office365.PacUtil.Services
             if (string.IsNullOrWhiteSpace(ConfigurationUtil.TemplateFileTokenEndMarker))
             {
                 throw new ConfigurationErrorsException("Missing configuration for 'TemplateFileTokenEndMarker'");
+            }
+
+            if (string.IsNullOrWhiteSpace(ConfigurationUtil.OutputPath))
+            {
+                throw new ConfigurationErrorsException("Missing configuration for 'OutputPath'");
             }
 
             if (string.IsNullOrWhiteSpace(ConfigurationUtil.WebServiceRootUrl))
@@ -105,7 +124,7 @@ namespace Office365.PacUtil.Services
                 }
 
                 LatestVersion = JsonConvert.DeserializeObject<Office365VersionResult>(content).Latest;
-                var currentVersionFile = $"{Path.GetTempPath()}{ConfigurationUtil.VersionPath}";
+                var currentVersionFile = $"{GetOutputPath()}\\{ConfigurationUtil.VersionPath}";
                 if (File.Exists(currentVersionFile))
                 {
                     var fileContents = await File.ReadAllTextAsync(currentVersionFile, token);
@@ -169,7 +188,7 @@ namespace Office365.PacUtil.Services
 
                 if (content != null)
                 {
-                    var currentDataFile = $"{Path.GetTempPath()}{ConfigurationUtil.DataPath}";
+                    var currentDataFile = $"{GetOutputPath()}\\{ConfigurationUtil.DataPath}";
                     await File.WriteAllTextAsync(currentDataFile, content, token);
 
                     ConsoleUtil.WriteMessage("Processing data for Office 365 IP Address and URLs...");
@@ -203,7 +222,7 @@ namespace Office365.PacUtil.Services
                             foreach (var ipItem in item["ips"].ToArray())
                             {
                                 var ipRangeResult = NetworkUtil.CalculateIpV4Subnet(ipItem.ToString());
-                                sb.AppendLine($"                isInNet(myIpAddress(),\"{ipRangeResult.Item1}\",\"{ipRangeResult.Item2}\") ||");
+                                sb.AppendLine($"                isInNet(myIpAddress(), \"{ipRangeResult.Item1}\", \"{ipRangeResult.Item2}\") ||");
                             }
 
                             sb.AppendLine();
@@ -223,7 +242,6 @@ namespace Office365.PacUtil.Services
 
                     // Merge into the template
                     var templateFile = await File.ReadAllTextAsync($"{options.File.FullName}", token);
-                    //var outputFile = templateFile.Replace(ConfigurationUtil.TemplateFileTokenMarker, finalText);
 
                     // Replace the old contents between the markes with the newly generated content
                     int startIndex = templateFile.IndexOf(startMarker) + startMarker.Length;
@@ -231,7 +249,7 @@ namespace Office365.PacUtil.Services
                     var outputFile = templateFile.Remove(startIndex, endIndex - startIndex).Insert(startIndex, finalText);
 
                     // Output generated file into temp PacUtil location
-                    var outputPath = $"{Path.GetTempPath()}PacUtil\\proxy-{LatestVersion}.pac";
+                    var outputPath = $"{GetOutputPath()}\\proxy-{LatestVersion}.pac";
                     await File.WriteAllTextAsync(outputPath, outputFile, token);
                     ConsoleUtil.WriteInfo($"Successfully generated new proxy PAC file: {outputPath}");
                 }
