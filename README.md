@@ -71,7 +71,7 @@ The following is the configuration found in the `appsettings.json` file.
 
 - **DataPath** - This is the path and filename to store the latest data from the Office 365 IP and Url Web Service, which is then used to generate the final output. 
 
-- **Instance** = < Worldwide | China | USGovDoD | USGovGCCHigh > - The short name of the Office 365 service instance.
+- **Instance** = < Worldwide | China | USGovDoD | USGovGCCHigh > - The short name of the Office 365 service instance. Default is `Worldwide`.
 
 - **IncludeIPv6** = < true | false > - Set the value to true to exclude IPv6 addresses from the output if you don't use IPv6 in your network. Default is `false`.
 
