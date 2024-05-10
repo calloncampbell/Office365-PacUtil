@@ -222,7 +222,7 @@ namespace Office365.PacUtil.Services
                             foreach (var ipItem in item["ips"].ToArray())
                             {
                                 var ipRangeResult = NetworkUtil.CalculateIpV4Subnet(ipItem.ToString());
-                                sb.AppendLine($"                isInNet(myIpAddress(), \"{ipRangeResult.Item1}\", \"{ipRangeResult.Item2}\") ||");
+                                sb.AppendLine($"                isInNet(host, \"{ipRangeResult.Item1}\", \"{ipRangeResult.Item2}\") ||");
                             }
 
                             sb.AppendLine();
