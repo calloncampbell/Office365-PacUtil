@@ -62,6 +62,10 @@ namespace Office365.PacUtil
                 new Option<bool>(new []{"--force"}, "Force the PAC file generation.")
                 {
                     IsRequired = false,
+                },
+                new Option<bool>(new []{"--optimize"}, "Removes duplicate entries across event IDs.")
+                {
+                    IsRequired = false,
                 }
             };
             commandPacFileUpdate.Handler = CommandHandler.Create<PacFileOptions, IHost, CancellationToken>(PacCommandFileUpdate);
