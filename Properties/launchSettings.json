@@ -2,7 +2,7 @@
   "profiles": {
     "CSC.PacUtil": {
       "commandName": "Project",
-      "commandLineArgs": "pac-file generate --file .\\proxy-template.pac --force"
+      "commandLineArgs": "pac-file generate --file .\\proxy-template.pac --force --optimize"
     }
   }
 }

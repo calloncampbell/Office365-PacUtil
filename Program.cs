@@ -63,7 +63,7 @@ namespace Office365.PacUtil
                 {
                     IsRequired = false,
                 },
-                new Option<bool>(new []{"--optimize"}, "Removes duplicate entries across event IDs.")
+                new Option<bool>(new []{"--optimize"}, "Optimizes event entries by moving duplicate URLs and IPs to a common section.")
                 {
                     IsRequired = false,
                 }

@@ -33,6 +33,10 @@ The intention of the tool is to provide a custom `proxy.pac` template file which
    ```console
    .\Office365.PacUtil.exe pac-file generate --file "proxy-template.pac" --force
    ```
+1. Optionally, you can optimize the event entries by moving duplicate URLs and IPs to a common section by running the following command:
+   ```console
+   .\Office365.PacUtil.exe pac-file generate --file "proxy-template.pac" --optimize
+   ```
 1. The generated output will be located in your USERS TEMP directory. `C:\Users\{username}\AppData\Local\Temp\PacUtil\proxy.pac`
 
 

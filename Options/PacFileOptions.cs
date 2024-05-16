@@ -19,5 +19,6 @@ namespace Office365.PacUtil.Options
         public FileInfo File { get; set; }
 
         public bool Force { get; set; }
+        public bool Optimize { get; set; }
     }
 }
