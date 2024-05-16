@@ -42,7 +42,7 @@ namespace Office365.PacUtil
         }
 
         /// <summary>
-        /// Builds the command line.
+        /// Builds the command line options.
         /// </summary>
         /// <returns></returns>
         public static CommandLineBuilder BuildCommandLine()
@@ -63,7 +63,7 @@ namespace Office365.PacUtil
                 {
                     IsRequired = false,
                 },
-                new Option<bool>(new []{"--optimize"}, "Removes duplicate entries across event IDs.")
+                new Option<bool>(new []{"--optimize"}, "Optimizes event entries by moving duplicate URLs and IPs to a common section.")
                 {
                     IsRequired = false,
                 }

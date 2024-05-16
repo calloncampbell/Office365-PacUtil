@@ -4,7 +4,10 @@ using Office365.PacUtil.Models;
 using Office365.PacUtil.Options;
 using Office365.PacUtil.Utils;
 using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Configuration;
+using System.Linq;
 using System.Net;
 using System.Text;
 using static System.Net.WebRequestMethods;
@@ -193,48 +196,13 @@ namespace Office365.PacUtil.Services
 
                     ConsoleUtil.WriteMessage("Processing data for Office 365 IP Address and URLs...");
 
-                    var changesUrl = $"{ConfigurationUtil.WebServiceRootUrl}/changes/{ConfigurationUtil.Instance}/{LatestVersion}?clientrequestid={ConfigurationUtil.ClientRequestId}";
-
-                    StringBuilder sb = new StringBuilder();
-                    sb.AppendLine(); 
-                    sb.AppendLine($"// Microsoft 365 URLs and IP address data version: {LatestVersion}");
-                    sb.AppendLine($"// URL to compare version {LatestVersion} with the latest: {changesUrl}");
-                    sb.AppendLine();
-
-                    var list = JsonConvert.DeserializeObject<JArray>(content);
                     
-                    foreach (var item in list)
-                    {
-                        sb.AppendLine($"                // Event ID {item["id"]} - {item["serviceArea"]}");
-                        
-                        if (item["urls"] is not null)
-                        {
-                            foreach (var urlItem in item["urls"].ToArray())
-                            {
-                                sb.AppendLine($"                shExpMatch(host, \"{urlItem}\") ||");
-                            }
 
-                            sb.AppendLine();
-                        }
-
-                        if (item["ips"] is not null)
-                        {
-                            foreach (var ipItem in item["ips"].ToArray())
-                            {
-                                var ipRangeResult = NetworkUtil.CalculateIpV4Subnet(ipItem.ToString());
-                                sb.AppendLine($"                isInNet(host, \"{ipRangeResult.Item1}\", \"{ipRangeResult.Item2}\") ||");
-                            }
-
-                            sb.AppendLine();
-                            sb.AppendLine();
-                        }
-                    }
-
-                    // Remove trailing || and empty space
-                    var finalText = sb.ToString();
-                    finalText.TrimEnd();
-                    finalText = finalText.Remove(finalText.Length - 6, 6);
-                    finalText = finalText + "\n";
+                    // Process pac items into expected format
+                    var list = JsonConvert.DeserializeObject<JArray>(content);
+                    var finalText = options.Optimize 
+                        ? GeneratePacResultsByEventsOptimized(list)
+                        : GeneratePacResultsByEvents(list);
 
                     // Define your markers
                     string startMarker = ConfigurationUtil.TemplateFileTokenStartMarker;
@@ -258,6 +226,183 @@ namespace Office365.PacUtil.Services
             {
                 ConsoleUtil.WriteError($"An exception occurred when generating PAC file. Details: {ex.Message}", ex);
             }
+        }
+
+        /// <summary>
+        /// Formats the IPs and URLs for each event. 
+        /// </summary>
+        /// <param name="items"></param>
+        /// <returns></returns>
+        private string GeneratePacResultsByEvents(JArray? items)
+        {
+            var changesUrl = $"{ConfigurationUtil.WebServiceRootUrl}/changes/{ConfigurationUtil.Instance}/{LatestVersion}?clientrequestid={ConfigurationUtil.ClientRequestId}";
+
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine();
+            sb.AppendLine($"// Microsoft 365 URLs and IP address data version: {LatestVersion}");
+            sb.AppendLine($"// URL to compare version {LatestVersion} with the latest: {changesUrl}");
+            sb.AppendLine();
+
+            foreach (var item in items)
+            {
+                sb.AppendLine($"                // Event ID {item["id"]} - {item["serviceArea"]}");
+
+                if (item["urls"] is not null)
+                {
+                    foreach (var urlItem in item["urls"].ToArray())
+                    {
+                        sb.AppendLine($"                shExpMatch(host, \"{urlItem}\") ||");
+                    }
+
+                    sb.AppendLine();
+                }
+
+                if (item["ips"] is not null)
+                {
+                    foreach (var ipItem in item["ips"].ToArray())
+                    {
+                        var ipRangeResult = NetworkUtil.CalculateIpV4Subnet(ipItem.ToString());
+                        sb.AppendLine($"                isInNet(host, \"{ipRangeResult.Item1}\", \"{ipRangeResult.Item2}\") ||");
+                    }
+
+                    sb.AppendLine();
+                    sb.AppendLine();
+                }
+            }
+
+            // Remove trailing || and empty space
+            var finalText = sb.ToString();
+            finalText.TrimEnd();
+            finalText = finalText.Remove(finalText.Length - 6, 6);
+            finalText = finalText + "\n";
+
+            return finalText;
+        }
+
+        /// <summary>
+        /// Optimizes the format for each event by moving the duplicate IPs and URLs into a common section.
+        /// </summary>
+        /// <param name="items"></param>
+        /// <returns></returns>
+        private string GeneratePacResultsByEventsOptimized(JArray? items)
+        {
+            var changesUrl = $"{ConfigurationUtil.WebServiceRootUrl}/changes/{ConfigurationUtil.Instance}/{LatestVersion}?clientrequestid={ConfigurationUtil.ClientRequestId}";
+
+            var pacEvents = new List<Office365PacEvent>();
+
+            // Map results
+            foreach (var item in items)
+            {
+                var pacItem = new Office365PacEvent()
+                {
+                    Id = item["id"].ToString(),
+                    ServiceArea = item["serviceArea"].ToString()
+                };
+
+                pacItem.Urls = new List<string>();
+                if (item["urls"] is not null)
+                {
+                    foreach (var urlItem in item["urls"].ToArray())
+                    {
+                        pacItem.Urls.Add(urlItem.ToString());
+                    }
+                }
+
+                pacItem.IpRanges = new List<Tuple<string, string>>();
+                if (item["ips"] is not null)
+                {
+                    foreach (var ipItem in item["ips"].ToArray())
+                    {
+                        var ipRangeResult = NetworkUtil.CalculateIpV4Subnet(ipItem.ToString());
+                        pacItem.IpRanges.Add(ipRangeResult);
+                    }
+                }
+
+                pacEvents.Add(pacItem);
+            }
+
+            // Create a separate list for common URLs
+            var commonUrls = pacEvents
+                .SelectMany(x => x.Urls)
+                .GroupBy(i => i)
+                .Where(g => g.Count() > 1)
+                .Select(g => g.Key)
+                .ToList();
+
+            // Create a separate list for common IP Ranges
+            var commonIps = pacEvents
+                .SelectMany(p => p.IpRanges)
+                .GroupBy(i => i)
+                .Where(g => g.Count() > 1)
+                .Select(g => g.Key)
+                .ToList();
+
+            // Remove common otems from events
+            foreach (var pacEvent in pacEvents)
+            {
+                pacEvent.Urls.RemoveAll(s => commonUrls.Contains(s));
+                pacEvent.IpRanges.RemoveAll(s => commonIps.Contains(s));
+            }
+
+            // Write out results
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine();
+            sb.AppendLine($"// Microsoft 365 URLs and IP address data version: {LatestVersion}");
+            sb.AppendLine($"// URL to compare version {LatestVersion} with the latest: {changesUrl}");
+            sb.AppendLine();
+
+            sb.AppendLine($"                // Office 365 Common URLs and IPs");
+            foreach (var url in commonUrls)
+            {
+                sb.AppendLine($"                shExpMatch(host, \"{url}\") ||");
+            }
+
+            sb.AppendLine();
+
+            foreach (var ipRangeResult in commonIps)
+            {
+                sb.AppendLine($"                isInNet(host, \"{ipRangeResult.Item1}\", \"{ipRangeResult.Item2}\") ||");
+            }
+
+            sb.AppendLine();
+
+            foreach (var pacEvent in pacEvents)
+            {
+                if (!pacEvent.Urls.Any() && !pacEvent.IpRanges.Any())
+                {
+                    continue;
+                }
+
+                sb.AppendLine($"                // Event ID {pacEvent.Id} - {pacEvent.ServiceArea}");
+
+                if (pacEvent.Urls.Any())
+                {
+                    foreach (var urlItem in pacEvent.Urls)
+                    {
+                        sb.AppendLine($"                shExpMatch(host, \"{urlItem}\") ||");
+                    }
+
+                    sb.AppendLine();
+                }
+
+                if (pacEvent.IpRanges.Any())
+                {
+                    foreach (var ipItem in pacEvent.IpRanges)
+                    {
+                        sb.AppendLine($"                isInNet(host, \"{ipItem.Item1}\", \"{ipItem.Item2}\") ||");
+                    }
+
+                    sb.AppendLine();
+                }
+            }
+
+            // Remove trailing || and empty space
+            var finalText = sb.ToString();
+            finalText.TrimEnd();
+            finalText = finalText.Remove(finalText.Length - 7, 7);
+            finalText = finalText + "\n";
+
+            return finalText;
         }
     }
 }
