@@ -365,7 +365,6 @@ namespace Office365.PacUtil.Services
             }
 
             sb.AppendLine();
-            //sb.AppendLine();
 
             foreach (var pacEvent in pacEvents)
             {
@@ -395,8 +394,6 @@ namespace Office365.PacUtil.Services
 
                     sb.AppendLine();
                 }
-
-                //sb.AppendLine();
             }
 
             // Remove trailing || and empty space

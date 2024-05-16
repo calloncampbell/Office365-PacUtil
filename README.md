@@ -40,6 +40,7 @@ The intention of the tool is to provide a custom `proxy.pac` template file which
 1. The generated output will be located in your USERS TEMP directory. `C:\Users\{username}\AppData\Local\Temp\PacUtil\proxy.pac`
 
 
+
 ### Configuration
 
 The following is the configuration found in the `appsettings.json` file.

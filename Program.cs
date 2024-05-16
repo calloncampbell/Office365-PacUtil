@@ -42,7 +42,7 @@ namespace Office365.PacUtil
         }
 
         /// <summary>
-        /// Builds the command line.
+        /// Builds the command line options.
         /// </summary>
         /// <returns></returns>
         public static CommandLineBuilder BuildCommandLine()
