@@ -185,7 +185,6 @@ namespace Office365.PacUtil.Utils
             var result = ipWithMask.Split('/');
             if (result?.Length == 0) 
             {
-                // TOOD - thow error
                 throw new Exception("error parsing IP");
             }
             
