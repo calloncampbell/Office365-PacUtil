@@ -10,6 +10,7 @@ using System.Configuration;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Text.RegularExpressions;
 using static System.Net.WebRequestMethods;
 using File = System.IO.File;
 
@@ -50,7 +51,7 @@ namespace Office365.PacUtil.Services
                 return path;
             }
 
-            path = $"{ConfigurationUtil.OutputPath}\\{OutputSubfolder}";           
+            path = $"{ConfigurationUtil.OutputPath}\\{OutputSubfolder}";
             return path;
         }
 
@@ -102,7 +103,7 @@ namespace Office365.PacUtil.Services
             if (string.IsNullOrWhiteSpace(ConfigurationUtil.Instance))
             {
                 throw new ConfigurationErrorsException("Missing configuration for 'Instance'");
-            }            
+            }
         }
 
         private async Task<bool> CheckForUpdatesAsync(CancellationToken token)
@@ -158,7 +159,7 @@ namespace Office365.PacUtil.Services
             {
                 ConsoleUtil.WriteError($"An exception occurred during update check. Details: {ex.Message}", ex);
                 return false;
-            }            
+            }
         }
 
         private async Task CreatePacFileAsync(PacFileOptions options, CancellationToken token)
@@ -196,11 +197,9 @@ namespace Office365.PacUtil.Services
 
                     ConsoleUtil.WriteMessage("Processing data for Office 365 IP Address and URLs...");
 
-                    
-
                     // Process pac items into expected format
                     var list = JsonConvert.DeserializeObject<JArray>(content);
-                    var finalText = options.Optimize 
+                    var finalText = options.Optimize
                         ? GeneratePacResultsByEventsOptimized(list)
                         : GeneratePacResultsByEvents(list);
 
@@ -219,6 +218,12 @@ namespace Office365.PacUtil.Services
                     // Output generated file into temp PacUtil location
                     var outputPath = $"{GetOutputPath()}\\proxy-{LatestVersion}.pac";
                     await File.WriteAllTextAsync(outputPath, outputFile, token);
+
+                    if (options.Report)
+                    {
+                        await GeneratePacEndpointListOutputAsync(outputFile);
+                    }
+
                     ConsoleUtil.WriteInfo($"Successfully generated new proxy PAC file: {outputPath}");
                 }
             }
@@ -403,6 +408,30 @@ namespace Office365.PacUtil.Services
             finalText = finalText + "\n";
 
             return finalText;
+        }
+
+        private async Task GeneratePacEndpointListOutputAsync(string outputFile)
+        {
+            var pacEndpoints = new List<string>();
+
+            var lines = outputFile.Split(Environment.NewLine);
+            foreach (var line in lines)
+            {
+                if (line.Contains("shExpMatch(host,") || 
+                    line.Contains("isInNet(host,") || 
+                    line.Contains("isInNet(myIpAddress(),"))
+                {
+                    var match = Regex.Match(line, "\"([^\"\"]*)\"");
+                    if (match.Success)
+                    {
+                        string item = match.Groups[1].Value;
+                        pacEndpoints.Add(item);
+                    }
+                }
+            }
+
+            var outputPath = $"{GetOutputPath()}\\proxy-{LatestVersion}-report.txt";
+            await File.WriteAllLinesAsync(outputPath, pacEndpoints);
         }
     }
 }

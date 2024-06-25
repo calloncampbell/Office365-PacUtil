@@ -66,6 +66,10 @@ namespace Office365.PacUtil
                 new Option<bool>(new []{"--optimize"}, "Optimizes event entries by moving duplicate URLs and IPs to a common section.")
                 {
                     IsRequired = false,
+                },
+                new Option<bool>(new []{"--report"}, "Generate report of URLs and IPs from generated pacfile.")
+                {
+                    IsRequired = false,
                 }
             };
             commandPacFileUpdate.Handler = CommandHandler.Create<PacFileOptions, IHost, CancellationToken>(PacCommandFileUpdate);
@@ -75,7 +79,6 @@ namespace Office365.PacUtil
             Command commandPacFileStatus = new Command("update-check", "Checks for updates from Microsoft.\nExample:\n   .\\Office365.PacUtil.exe pac-file update-check");
             commandPacFileStatus.Handler = CommandHandler.Create<PacFileOptions, IHost, CancellationToken>(PacCommandStatus);
             commandPacFile.AddCommand(commandPacFileStatus);
-
 
             root.AddCommand(commandPacFile);
 

@@ -38,7 +38,10 @@ The intention of the tool is to provide a custom `proxy.pac` template file which
    .\Office365.PacUtil.exe pac-file generate --file "proxy-template.pac" --optimize
    ```
 1. The generated output will be located in your USERS TEMP directory. `C:\Users\{username}\AppData\Local\Temp\PacUtil\proxy.pac`
-
+1. Optionally, you can generate a report of all the URLs and IPs generrated in the pacfile.
+   ```console
+   .\Office365.PacUtil.exe pac-file generate --file "proxy-template.pac" --report
+   ```
 
 
 ### Configuration

@@ -20,5 +20,6 @@ namespace Office365.PacUtil.Options
 
         public bool Force { get; set; }
         public bool Optimize { get; set; }
+        public bool Report { get; set; }
     }
 }
