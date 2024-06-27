@@ -417,7 +417,8 @@ namespace Office365.PacUtil.Services
             var lines = outputFile.Split(Environment.NewLine);
             foreach (var line in lines)
             {
-                if (line.Contains("shExpMatch(host,") || 
+                if (line.Contains("dnsDomainIs(host,") ||
+                    line.Contains("shExpMatch(host,") || 
                     line.Contains("isInNet(host,") || 
                     line.Contains("isInNet(myIpAddress(),"))
                 {
