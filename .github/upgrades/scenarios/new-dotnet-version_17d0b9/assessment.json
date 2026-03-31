@@ -1,0 +1,1895 @@
+{
+  "settings": {
+    "components": {
+      "code": true,
+      "binaries": false
+    },
+    "targetId": "net10.0",
+    "targetDisplayName": ".NETCoreApp,Version=v10.0"
+  },
+  "analysisStartTime": "2026-03-31T23:31:06.657742Z",
+  "analysisEndTime": "2026-03-31T23:31:09.7435531Z",
+  "privacyModeHelpUrl": "https://go.microsoft.com/fwlink/?linkid=2270980",
+  "stats": {
+    "summary": {
+      "projects": 1,
+      "issues": 5,
+      "incidents": 72,
+      "effort": 72
+    },
+    "charts": {
+      "severity": {
+        "Mandatory": 1,
+        "Optional": 0,
+        "Potential": 71,
+        "Information": 0
+      },
+      "category": {
+        "NuGet": 5,
+        "Project": 1,
+        "Api": 66
+      }
+    }
+  },
+  "projects": [
+    {
+      "path": "Office365.PacUtil.csproj",
+      "startingProject": true,
+      "issues": 4,
+      "storyPoints": 72,
+      "properties": {
+        "appName": "Office365.PacUtil",
+        "projectKind": "DotNetCoreApp",
+        "frameworks": [
+          "net8.0"
+        ],
+        "languages": [
+          "C#"
+        ],
+        "tools": [
+          "MSBuild"
+        ],
+        "isSdkStyle": true,
+        "numberOfFiles": 10,
+        "numberOfCodeFiles": 10,
+        "linesTotal": 1093,
+        "linesOfCode": 1093,
+        "totalApiScanned": 1028,
+        "minLinesOfCodeToChange": 66,
+        "maxLinesOfCodeToChange": 66
+      },
+      "ruleInstances": [
+        {
+          "incidentId": "bceed0fc-fb47-4e23-be8a-ff89aca155ca",
+          "ruleId": "NuGet.0002",
+          "projectPath": "Office365.PacUtil.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Microsoft.Extensions.Configuration, 8.0.0\n\nRecommendation:\n\nRemove Microsoft.Extensions.Configuration, and replace with new package Microsoft.Extensions.Configuration 10.0.5",
+              "protected": "Microsoft.Extensions.Configuration, 8.0.0\n\nRecommendation:\n\nRemove Microsoft.Extensions.Configuration, and replace with new package Microsoft.Extensions.Configuration 10.0.5"
+            },
+            "kind": "File",
+            "path": "Office365.PacUtil.csproj",
+            "snippet": "Microsoft.Extensions.Configuration, 8.0.0\n\nRecommendation:\n\nRemove Microsoft.Extensions.Configuration, and replace with new package Microsoft.Extensions.Configuration 10.0.5",
+            "protectedSnippet": "Microsoft.Extensions.Configuration, 8.0.0\n\nRecommendation:\n\nRemove Microsoft.Extensions.Configuration, and replace with new package Microsoft.Extensions.Configuration 10.0.5",
+            "label": "Microsoft.Extensions.Configuration 8.0.0",
+            "properties": {
+              "PackageId": "Microsoft.Extensions.Configuration",
+              "PackageVersion": "8.0.0",
+              "PackageNewVersion": "10.0.5",
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "5dc267ed-51cb-479e-bd17-230724352ced",
+          "ruleId": "NuGet.0002",
+          "projectPath": "Office365.PacUtil.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Microsoft.Extensions.Configuration.Json, 8.0.0\n\nRecommendation:\n\nRemove Microsoft.Extensions.Configuration.Json, and replace with new package Microsoft.Extensions.Configuration.Json 10.0.5",
+              "protected": "Microsoft.Extensions.Configuration.Json, 8.0.0\n\nRecommendation:\n\nRemove Microsoft.Extensions.Configuration.Json, and replace with new package Microsoft.Extensions.Configuration.Json 10.0.5"
+            },
+            "kind": "File",
+            "path": "Office365.PacUtil.csproj",
+            "snippet": "Microsoft.Extensions.Configuration.Json, 8.0.0\n\nRecommendation:\n\nRemove Microsoft.Extensions.Configuration.Json, and replace with new package Microsoft.Extensions.Configuration.Json 10.0.5",
+            "protectedSnippet": "Microsoft.Extensions.Configuration.Json, 8.0.0\n\nRecommendation:\n\nRemove Microsoft.Extensions.Configuration.Json, and replace with new package Microsoft.Extensions.Configuration.Json 10.0.5",
+            "label": "Microsoft.Extensions.Configuration.Json 8.0.0",
+            "properties": {
+              "PackageId": "Microsoft.Extensions.Configuration.Json",
+              "PackageVersion": "8.0.0",
+              "PackageNewVersion": "10.0.5",
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "6a1b9432-be4a-4052-9342-e00e7dd01424",
+          "ruleId": "NuGet.0002",
+          "projectPath": "Office365.PacUtil.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Microsoft.Extensions.Hosting, 8.0.0\n\nRecommendation:\n\nRemove Microsoft.Extensions.Hosting, and replace with new package Microsoft.Extensions.Hosting 10.0.5",
+              "protected": "Microsoft.Extensions.Hosting, 8.0.0\n\nRecommendation:\n\nRemove Microsoft.Extensions.Hosting, and replace with new package Microsoft.Extensions.Hosting 10.0.5"
+            },
+            "kind": "File",
+            "path": "Office365.PacUtil.csproj",
+            "snippet": "Microsoft.Extensions.Hosting, 8.0.0\n\nRecommendation:\n\nRemove Microsoft.Extensions.Hosting, and replace with new package Microsoft.Extensions.Hosting 10.0.5",
+            "protectedSnippet": "Microsoft.Extensions.Hosting, 8.0.0\n\nRecommendation:\n\nRemove Microsoft.Extensions.Hosting, and replace with new package Microsoft.Extensions.Hosting 10.0.5",
+            "label": "Microsoft.Extensions.Hosting 8.0.0",
+            "properties": {
+              "PackageId": "Microsoft.Extensions.Hosting",
+              "PackageVersion": "8.0.0",
+              "PackageNewVersion": "10.0.5",
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "3aa0dce3-4ddc-41cd-a3f9-f9974054c198",
+          "ruleId": "NuGet.0002",
+          "projectPath": "Office365.PacUtil.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Newtonsoft.Json, 13.0.3\n\nRecommendation:\n\nRemove Newtonsoft.Json, and replace with new package Newtonsoft.Json 13.0.4",
+              "protected": "Newtonsoft.Json, 13.0.3\n\nRecommendation:\n\nRemove Newtonsoft.Json, and replace with new package Newtonsoft.Json 13.0.4"
+            },
+            "kind": "File",
+            "path": "Office365.PacUtil.csproj",
+            "snippet": "Newtonsoft.Json, 13.0.3\n\nRecommendation:\n\nRemove Newtonsoft.Json, and replace with new package Newtonsoft.Json 13.0.4",
+            "protectedSnippet": "Newtonsoft.Json, 13.0.3\n\nRecommendation:\n\nRemove Newtonsoft.Json, and replace with new package Newtonsoft.Json 13.0.4",
+            "label": "Newtonsoft.Json 13.0.3",
+            "properties": {
+              "PackageId": "Newtonsoft.Json",
+              "PackageVersion": "13.0.3",
+              "PackageNewVersion": "13.0.4",
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "f12e220e-0d69-42d6-a1f9-3b87e26c5f45",
+          "ruleId": "NuGet.0002",
+          "projectPath": "Office365.PacUtil.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "System.Configuration.ConfigurationManager, 8.0.0\n\nRecommendation:\n\nRemove System.Configuration.ConfigurationManager, and replace with new package System.Configuration.ConfigurationManager 10.0.5",
+              "protected": "System.Configuration.ConfigurationManager, 8.0.0\n\nRecommendation:\n\nRemove System.Configuration.ConfigurationManager, and replace with new package System.Configuration.ConfigurationManager 10.0.5"
+            },
+            "kind": "File",
+            "path": "Office365.PacUtil.csproj",
+            "snippet": "System.Configuration.ConfigurationManager, 8.0.0\n\nRecommendation:\n\nRemove System.Configuration.ConfigurationManager, and replace with new package System.Configuration.ConfigurationManager 10.0.5",
+            "protectedSnippet": "System.Configuration.ConfigurationManager, 8.0.0\n\nRecommendation:\n\nRemove System.Configuration.ConfigurationManager, and replace with new package System.Configuration.ConfigurationManager 10.0.5",
+            "label": "System.Configuration.ConfigurationManager 8.0.0",
+            "properties": {
+              "PackageId": "System.Configuration.ConfigurationManager",
+              "PackageVersion": "8.0.0",
+              "PackageNewVersion": "10.0.5",
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "3752bf91-298c-4527-845f-d871663a9302",
+          "ruleId": "Project.0002",
+          "projectPath": "Office365.PacUtil.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Current target framework: net8.0\nRecommended target framework: net10.0",
+              "protected": "Current target framework: net8.0\nRecommended target framework: net10.0"
+            },
+            "kind": "File",
+            "path": "Office365.PacUtil.csproj",
+            "snippet": "Current target framework: net8.0\nRecommended target framework: net10.0",
+            "protectedSnippet": "Current target framework: net8.0\nRecommended target framework: net10.0",
+            "properties": {
+              "CurrentTargetFramework": "net8.0",
+              "RecommendedTargetFramework": "net10.0"
+            }
+          }
+        },
+        {
+          "incidentId": "f651bb27-97e9-453f-b2d4-d203e98af9c7",
+          "ruleId": "Api.0003",
+          "description": "Breaking change - Streaming HTTP responses enabled by default in browser HTTP clients ",
+          "projectPath": "Office365.PacUtil.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "var content = result?.Content == null ? null : await result.Content.ReadAsStringAsync();",
+              "protected": "T:System.Net.Http.HttpContent"
+            },
+            "kind": "File",
+            "path": "Services\\PacFileService.cs",
+            "snippet": "var content = result?.Content == null ? null : await result.Content.ReadAsStringAsync();",
+            "protectedSnippet": "T:System.Net.Http.HttpContent",
+            "label": "T:System.Net.Http.HttpContent",
+            "links": [
+              {
+                "title": "API documentation",
+                "url": "https://github.com/dotnet/docs/blob/main/docs/core/compatibility/networking/10.0/default-http-streaming.md",
+                "isCustom": false
+              }
+            ],
+            "line": 190,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "e91b02cd-5865-4fda-b2a8-83646b042964",
+          "ruleId": "Api.0003",
+          "description": "Breaking change - Streaming HTTP responses enabled by default in browser HTTP clients ",
+          "projectPath": "Office365.PacUtil.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "var content = result?.Content == null ? null : await result.Content.ReadAsStringAsync();",
+              "protected": "T:System.Net.Http.HttpContent"
+            },
+            "kind": "File",
+            "path": "Services\\PacFileService.cs",
+            "snippet": "var content = result?.Content == null ? null : await result.Content.ReadAsStringAsync();",
+            "protectedSnippet": "T:System.Net.Http.HttpContent",
+            "label": "T:System.Net.Http.HttpContent",
+            "links": [
+              {
+                "title": "API documentation",
+                "url": "https://github.com/dotnet/docs/blob/main/docs/core/compatibility/networking/10.0/default-http-streaming.md",
+                "isCustom": false
+              }
+            ],
+            "line": 190,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "ff619795-b2e7-4096-a36b-c53375b44e7d",
+          "ruleId": "Api.0003",
+          "description": "Breaking change - Streaming HTTP responses enabled by default in browser HTTP clients ",
+          "projectPath": "Office365.PacUtil.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "var content = result?.Content == null ? null : await result.Content.ReadAsStringAsync();",
+              "protected": "T:System.Net.Http.HttpContent"
+            },
+            "kind": "File",
+            "path": "Services\\PacFileService.cs",
+            "snippet": "var content = result?.Content == null ? null : await result.Content.ReadAsStringAsync();",
+            "protectedSnippet": "T:System.Net.Http.HttpContent",
+            "label": "T:System.Net.Http.HttpContent",
+            "links": [
+              {
+                "title": "API documentation",
+                "url": "https://github.com/dotnet/docs/blob/main/docs/core/compatibility/networking/10.0/default-http-streaming.md",
+                "isCustom": false
+              }
+            ],
+            "line": 122,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "a6b7cfc6-1899-4391-9e23-e5392718524c",
+          "ruleId": "Api.0003",
+          "description": "Breaking change - Streaming HTTP responses enabled by default in browser HTTP clients ",
+          "projectPath": "Office365.PacUtil.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "var content = result?.Content == null ? null : await result.Content.ReadAsStringAsync();",
+              "protected": "T:System.Net.Http.HttpContent"
+            },
+            "kind": "File",
+            "path": "Services\\PacFileService.cs",
+            "snippet": "var content = result?.Content == null ? null : await result.Content.ReadAsStringAsync();",
+            "protectedSnippet": "T:System.Net.Http.HttpContent",
+            "label": "T:System.Net.Http.HttpContent",
+            "links": [
+              {
+                "title": "API documentation",
+                "url": "https://github.com/dotnet/docs/blob/main/docs/core/compatibility/networking/10.0/default-http-streaming.md",
+                "isCustom": false
+              }
+            ],
+            "line": 122,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "84bfa0dd-9f2d-4061-bab0-4fb23d063514",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Configuration.ConfigurationManager, 9.0.0-preview.6.24302.3. Add package reference to System.Configuration.ConfigurationManager, 9.0.0-preview.6.24302.3",
+          "projectPath": "Office365.PacUtil.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "throw new ConfigurationErrorsException(\u0022Missing configuration for \u0027Instance\u0027\u0022);",
+              "protected": "T:System.Configuration.ConfigurationErrorsException"
+            },
+            "kind": "File",
+            "path": "Services\\PacFileService.cs",
+            "snippet": "throw new ConfigurationErrorsException(\u0022Missing configuration for \u0027Instance\u0027\u0022);",
+            "protectedSnippet": "T:System.Configuration.ConfigurationErrorsException",
+            "label": "T:System.Configuration.ConfigurationErrorsException",
+            "properties": {
+              "PackageId": "System.Configuration.ConfigurationManager",
+              "PackageNewVersion": "9.0.0-preview.6.24302.3"
+            },
+            "line": 104,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "ef1d23d8-f567-45b1-ab19-0cf571aff4e6",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Configuration.ConfigurationManager, 9.0.0-preview.6.24302.3. Add package reference to System.Configuration.ConfigurationManager, 9.0.0-preview.6.24302.3",
+          "projectPath": "Office365.PacUtil.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "throw new ConfigurationErrorsException(\u0022Missing configuration for \u0027Instance\u0027\u0022);",
+              "protected": "M:System.Configuration.ConfigurationErrorsException.#ctor(System.String)"
+            },
+            "kind": "File",
+            "path": "Services\\PacFileService.cs",
+            "snippet": "throw new ConfigurationErrorsException(\u0022Missing configuration for \u0027Instance\u0027\u0022);",
+            "protectedSnippet": "M:System.Configuration.ConfigurationErrorsException.#ctor(System.String)",
+            "label": "M:System.Configuration.ConfigurationErrorsException.#ctor(System.String)",
+            "properties": {
+              "PackageId": "System.Configuration.ConfigurationManager",
+              "PackageNewVersion": "9.0.0-preview.6.24302.3"
+            },
+            "line": 104,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "2ebc1f27-0b09-458f-8b53-e13a7cd38a10",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Configuration.ConfigurationManager, 9.0.0-preview.6.24302.3. Add package reference to System.Configuration.ConfigurationManager, 9.0.0-preview.6.24302.3",
+          "projectPath": "Office365.PacUtil.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "throw new ConfigurationErrorsException(\u0022Missing configuration for \u0027DataPath\u0027\u0022);",
+              "protected": "T:System.Configuration.ConfigurationErrorsException"
+            },
+            "kind": "File",
+            "path": "Services\\PacFileService.cs",
+            "snippet": "throw new ConfigurationErrorsException(\u0022Missing configuration for \u0027DataPath\u0027\u0022);",
+            "protectedSnippet": "T:System.Configuration.ConfigurationErrorsException",
+            "label": "T:System.Configuration.ConfigurationErrorsException",
+            "properties": {
+              "PackageId": "System.Configuration.ConfigurationManager",
+              "PackageNewVersion": "9.0.0-preview.6.24302.3"
+            },
+            "line": 99,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "0ea4532c-cb24-44a5-b2a2-07863589576e",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Configuration.ConfigurationManager, 9.0.0-preview.6.24302.3. Add package reference to System.Configuration.ConfigurationManager, 9.0.0-preview.6.24302.3",
+          "projectPath": "Office365.PacUtil.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "throw new ConfigurationErrorsException(\u0022Missing configuration for \u0027DataPath\u0027\u0022);",
+              "protected": "M:System.Configuration.ConfigurationErrorsException.#ctor(System.String)"
+            },
+            "kind": "File",
+            "path": "Services\\PacFileService.cs",
+            "snippet": "throw new ConfigurationErrorsException(\u0022Missing configuration for \u0027DataPath\u0027\u0022);",
+            "protectedSnippet": "M:System.Configuration.ConfigurationErrorsException.#ctor(System.String)",
+            "label": "M:System.Configuration.ConfigurationErrorsException.#ctor(System.String)",
+            "properties": {
+              "PackageId": "System.Configuration.ConfigurationManager",
+              "PackageNewVersion": "9.0.0-preview.6.24302.3"
+            },
+            "line": 99,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "9ebb5c8a-2c79-475b-944a-0bf96fdfb50a",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Configuration.ConfigurationManager, 9.0.0-preview.6.24302.3. Add package reference to System.Configuration.ConfigurationManager, 9.0.0-preview.6.24302.3",
+          "projectPath": "Office365.PacUtil.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "throw new ConfigurationErrorsException(\u0022Missing configuration for \u0027VersionPath\u0027\u0022);",
+              "protected": "T:System.Configuration.ConfigurationErrorsException"
+            },
+            "kind": "File",
+            "path": "Services\\PacFileService.cs",
+            "snippet": "throw new ConfigurationErrorsException(\u0022Missing configuration for \u0027VersionPath\u0027\u0022);",
+            "protectedSnippet": "T:System.Configuration.ConfigurationErrorsException",
+            "label": "T:System.Configuration.ConfigurationErrorsException",
+            "properties": {
+              "PackageId": "System.Configuration.ConfigurationManager",
+              "PackageNewVersion": "9.0.0-preview.6.24302.3"
+            },
+            "line": 94,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "56959727-d257-45e1-86c8-323e6ee4b0af",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Configuration.ConfigurationManager, 9.0.0-preview.6.24302.3. Add package reference to System.Configuration.ConfigurationManager, 9.0.0-preview.6.24302.3",
+          "projectPath": "Office365.PacUtil.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "throw new ConfigurationErrorsException(\u0022Missing configuration for \u0027VersionPath\u0027\u0022);",
+              "protected": "M:System.Configuration.ConfigurationErrorsException.#ctor(System.String)"
+            },
+            "kind": "File",
+            "path": "Services\\PacFileService.cs",
+            "snippet": "throw new ConfigurationErrorsException(\u0022Missing configuration for \u0027VersionPath\u0027\u0022);",
+            "protectedSnippet": "M:System.Configuration.ConfigurationErrorsException.#ctor(System.String)",
+            "label": "M:System.Configuration.ConfigurationErrorsException.#ctor(System.String)",
+            "properties": {
+              "PackageId": "System.Configuration.ConfigurationManager",
+              "PackageNewVersion": "9.0.0-preview.6.24302.3"
+            },
+            "line": 94,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "62cd53bf-e1da-452f-888a-ff01542e1509",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Configuration.ConfigurationManager, 9.0.0-preview.6.24302.3. Add package reference to System.Configuration.ConfigurationManager, 9.0.0-preview.6.24302.3",
+          "projectPath": "Office365.PacUtil.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "throw new ConfigurationErrorsException(\u0022Missing configuration for \u0027WebServiceRootUrl\u0027\u0022);",
+              "protected": "T:System.Configuration.ConfigurationErrorsException"
+            },
+            "kind": "File",
+            "path": "Services\\PacFileService.cs",
+            "snippet": "throw new ConfigurationErrorsException(\u0022Missing configuration for \u0027WebServiceRootUrl\u0027\u0022);",
+            "protectedSnippet": "T:System.Configuration.ConfigurationErrorsException",
+            "label": "T:System.Configuration.ConfigurationErrorsException",
+            "properties": {
+              "PackageId": "System.Configuration.ConfigurationManager",
+              "PackageNewVersion": "9.0.0-preview.6.24302.3"
+            },
+            "line": 89,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "a522688e-96c0-4b86-b766-37ad48e7aa29",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Configuration.ConfigurationManager, 9.0.0-preview.6.24302.3. Add package reference to System.Configuration.ConfigurationManager, 9.0.0-preview.6.24302.3",
+          "projectPath": "Office365.PacUtil.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "throw new ConfigurationErrorsException(\u0022Missing configuration for \u0027WebServiceRootUrl\u0027\u0022);",
+              "protected": "M:System.Configuration.ConfigurationErrorsException.#ctor(System.String)"
+            },
+            "kind": "File",
+            "path": "Services\\PacFileService.cs",
+            "snippet": "throw new ConfigurationErrorsException(\u0022Missing configuration for \u0027WebServiceRootUrl\u0027\u0022);",
+            "protectedSnippet": "M:System.Configuration.ConfigurationErrorsException.#ctor(System.String)",
+            "label": "M:System.Configuration.ConfigurationErrorsException.#ctor(System.String)",
+            "properties": {
+              "PackageId": "System.Configuration.ConfigurationManager",
+              "PackageNewVersion": "9.0.0-preview.6.24302.3"
+            },
+            "line": 89,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "882682ba-99ae-4b76-95f8-d131b147f9f6",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Configuration.ConfigurationManager, 9.0.0-preview.6.24302.3. Add package reference to System.Configuration.ConfigurationManager, 9.0.0-preview.6.24302.3",
+          "projectPath": "Office365.PacUtil.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "throw new ConfigurationErrorsException(\u0022Missing configuration for \u0027OutputPath\u0027\u0022);",
+              "protected": "T:System.Configuration.ConfigurationErrorsException"
+            },
+            "kind": "File",
+            "path": "Services\\PacFileService.cs",
+            "snippet": "throw new ConfigurationErrorsException(\u0022Missing configuration for \u0027OutputPath\u0027\u0022);",
+            "protectedSnippet": "T:System.Configuration.ConfigurationErrorsException",
+            "label": "T:System.Configuration.ConfigurationErrorsException",
+            "properties": {
+              "PackageId": "System.Configuration.ConfigurationManager",
+              "PackageNewVersion": "9.0.0-preview.6.24302.3"
+            },
+            "line": 84,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "f66b6ff2-017b-400d-8521-9ead8d561191",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Configuration.ConfigurationManager, 9.0.0-preview.6.24302.3. Add package reference to System.Configuration.ConfigurationManager, 9.0.0-preview.6.24302.3",
+          "projectPath": "Office365.PacUtil.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "throw new ConfigurationErrorsException(\u0022Missing configuration for \u0027OutputPath\u0027\u0022);",
+              "protected": "M:System.Configuration.ConfigurationErrorsException.#ctor(System.String)"
+            },
+            "kind": "File",
+            "path": "Services\\PacFileService.cs",
+            "snippet": "throw new ConfigurationErrorsException(\u0022Missing configuration for \u0027OutputPath\u0027\u0022);",
+            "protectedSnippet": "M:System.Configuration.ConfigurationErrorsException.#ctor(System.String)",
+            "label": "M:System.Configuration.ConfigurationErrorsException.#ctor(System.String)",
+            "properties": {
+              "PackageId": "System.Configuration.ConfigurationManager",
+              "PackageNewVersion": "9.0.0-preview.6.24302.3"
+            },
+            "line": 84,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "4e6cd3c5-c14d-4df9-a73d-175386240646",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Configuration.ConfigurationManager, 9.0.0-preview.6.24302.3. Add package reference to System.Configuration.ConfigurationManager, 9.0.0-preview.6.24302.3",
+          "projectPath": "Office365.PacUtil.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "throw new ConfigurationErrorsException(\u0022Missing configuration for \u0027TemplateFileTokenEndMarker\u0027\u0022);",
+              "protected": "T:System.Configuration.ConfigurationErrorsException"
+            },
+            "kind": "File",
+            "path": "Services\\PacFileService.cs",
+            "snippet": "throw new ConfigurationErrorsException(\u0022Missing configuration for \u0027TemplateFileTokenEndMarker\u0027\u0022);",
+            "protectedSnippet": "T:System.Configuration.ConfigurationErrorsException",
+            "label": "T:System.Configuration.ConfigurationErrorsException",
+            "properties": {
+              "PackageId": "System.Configuration.ConfigurationManager",
+              "PackageNewVersion": "9.0.0-preview.6.24302.3"
+            },
+            "line": 79,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "f76ad8bf-db2a-48f5-b363-a1014921edc9",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Configuration.ConfigurationManager, 9.0.0-preview.6.24302.3. Add package reference to System.Configuration.ConfigurationManager, 9.0.0-preview.6.24302.3",
+          "projectPath": "Office365.PacUtil.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "throw new ConfigurationErrorsException(\u0022Missing configuration for \u0027TemplateFileTokenEndMarker\u0027\u0022);",
+              "protected": "M:System.Configuration.ConfigurationErrorsException.#ctor(System.String)"
+            },
+            "kind": "File",
+            "path": "Services\\PacFileService.cs",
+            "snippet": "throw new ConfigurationErrorsException(\u0022Missing configuration for \u0027TemplateFileTokenEndMarker\u0027\u0022);",
+            "protectedSnippet": "M:System.Configuration.ConfigurationErrorsException.#ctor(System.String)",
+            "label": "M:System.Configuration.ConfigurationErrorsException.#ctor(System.String)",
+            "properties": {
+              "PackageId": "System.Configuration.ConfigurationManager",
+              "PackageNewVersion": "9.0.0-preview.6.24302.3"
+            },
+            "line": 79,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "fff43b4f-fe35-4e56-8fa4-1032863efede",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Configuration.ConfigurationManager, 9.0.0-preview.6.24302.3. Add package reference to System.Configuration.ConfigurationManager, 9.0.0-preview.6.24302.3",
+          "projectPath": "Office365.PacUtil.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "throw new ConfigurationErrorsException(\u0022Missing configuration for \u0027TemplateFileTokenStartMarker\u0027\u0022);",
+              "protected": "T:System.Configuration.ConfigurationErrorsException"
+            },
+            "kind": "File",
+            "path": "Services\\PacFileService.cs",
+            "snippet": "throw new ConfigurationErrorsException(\u0022Missing configuration for \u0027TemplateFileTokenStartMarker\u0027\u0022);",
+            "protectedSnippet": "T:System.Configuration.ConfigurationErrorsException",
+            "label": "T:System.Configuration.ConfigurationErrorsException",
+            "properties": {
+              "PackageId": "System.Configuration.ConfigurationManager",
+              "PackageNewVersion": "9.0.0-preview.6.24302.3"
+            },
+            "line": 74,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "650eb0f3-4cd2-42af-a592-e9543708d62f",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Configuration.ConfigurationManager, 9.0.0-preview.6.24302.3. Add package reference to System.Configuration.ConfigurationManager, 9.0.0-preview.6.24302.3",
+          "projectPath": "Office365.PacUtil.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "throw new ConfigurationErrorsException(\u0022Missing configuration for \u0027TemplateFileTokenStartMarker\u0027\u0022);",
+              "protected": "M:System.Configuration.ConfigurationErrorsException.#ctor(System.String)"
+            },
+            "kind": "File",
+            "path": "Services\\PacFileService.cs",
+            "snippet": "throw new ConfigurationErrorsException(\u0022Missing configuration for \u0027TemplateFileTokenStartMarker\u0027\u0022);",
+            "protectedSnippet": "M:System.Configuration.ConfigurationErrorsException.#ctor(System.String)",
+            "label": "M:System.Configuration.ConfigurationErrorsException.#ctor(System.String)",
+            "properties": {
+              "PackageId": "System.Configuration.ConfigurationManager",
+              "PackageNewVersion": "9.0.0-preview.6.24302.3"
+            },
+            "line": 74,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "a083c0ad-c785-48e0-a24f-b1c28f9ba982",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Configuration.ConfigurationManager, 9.0.0-preview.6.24302.3. Add package reference to System.Configuration.ConfigurationManager, 9.0.0-preview.6.24302.3",
+          "projectPath": "Office365.PacUtil.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "throw new ConfigurationErrorsException(\u0022Invalid configuration value for \u0027ClientRequestId\u0027. Please use a properly formatted GUID - xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx. The README.md file has more details and samples.\u0022);",
+              "protected": "T:System.Configuration.ConfigurationErrorsException"
+            },
+            "kind": "File",
+            "path": "Services\\PacFileService.cs",
+            "snippet": "throw new ConfigurationErrorsException(\u0022Invalid configuration value for \u0027ClientRequestId\u0027. Please use a properly formatted GUID - xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx. The README.md file has more details and samples.\u0022);",
+            "protectedSnippet": "T:System.Configuration.ConfigurationErrorsException",
+            "label": "T:System.Configuration.ConfigurationErrorsException",
+            "properties": {
+              "PackageId": "System.Configuration.ConfigurationManager",
+              "PackageNewVersion": "9.0.0-preview.6.24302.3"
+            },
+            "line": 68,
+            "column": 20
+          }
+        },
+        {
+          "incidentId": "3799b53a-8d4b-411f-9de1-0115c18a529c",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Configuration.ConfigurationManager, 9.0.0-preview.6.24302.3. Add package reference to System.Configuration.ConfigurationManager, 9.0.0-preview.6.24302.3",
+          "projectPath": "Office365.PacUtil.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "throw new ConfigurationErrorsException(\u0022Invalid configuration value for \u0027ClientRequestId\u0027. Please use a properly formatted GUID - xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx. The README.md file has more details and samples.\u0022);",
+              "protected": "M:System.Configuration.ConfigurationErrorsException.#ctor(System.String)"
+            },
+            "kind": "File",
+            "path": "Services\\PacFileService.cs",
+            "snippet": "throw new ConfigurationErrorsException(\u0022Invalid configuration value for \u0027ClientRequestId\u0027. Please use a properly formatted GUID - xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx. The README.md file has more details and samples.\u0022);",
+            "protectedSnippet": "M:System.Configuration.ConfigurationErrorsException.#ctor(System.String)",
+            "label": "M:System.Configuration.ConfigurationErrorsException.#ctor(System.String)",
+            "properties": {
+              "PackageId": "System.Configuration.ConfigurationManager",
+              "PackageNewVersion": "9.0.0-preview.6.24302.3"
+            },
+            "line": 68,
+            "column": 20
+          }
+        },
+        {
+          "incidentId": "00db292e-29f3-4491-be51-64d544d1ac67",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Configuration.ConfigurationManager, 9.0.0-preview.6.24302.3. Add package reference to System.Configuration.ConfigurationManager, 9.0.0-preview.6.24302.3",
+          "projectPath": "Office365.PacUtil.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "throw new ConfigurationErrorsException(\u0022Missing configuration for \u0027ClientRequestId\u0027\u0022);",
+              "protected": "T:System.Configuration.ConfigurationErrorsException"
+            },
+            "kind": "File",
+            "path": "Services\\PacFileService.cs",
+            "snippet": "throw new ConfigurationErrorsException(\u0022Missing configuration for \u0027ClientRequestId\u0027\u0022);",
+            "protectedSnippet": "T:System.Configuration.ConfigurationErrorsException",
+            "label": "T:System.Configuration.ConfigurationErrorsException",
+            "properties": {
+              "PackageId": "System.Configuration.ConfigurationManager",
+              "PackageNewVersion": "9.0.0-preview.6.24302.3"
+            },
+            "line": 61,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "0777c693-7bf3-44cf-8c97-98cfcb200946",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Configuration.ConfigurationManager, 9.0.0-preview.6.24302.3. Add package reference to System.Configuration.ConfigurationManager, 9.0.0-preview.6.24302.3",
+          "projectPath": "Office365.PacUtil.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "throw new ConfigurationErrorsException(\u0022Missing configuration for \u0027ClientRequestId\u0027\u0022);",
+              "protected": "M:System.Configuration.ConfigurationErrorsException.#ctor(System.String)"
+            },
+            "kind": "File",
+            "path": "Services\\PacFileService.cs",
+            "snippet": "throw new ConfigurationErrorsException(\u0022Missing configuration for \u0027ClientRequestId\u0027\u0022);",
+            "protectedSnippet": "M:System.Configuration.ConfigurationErrorsException.#ctor(System.String)",
+            "label": "M:System.Configuration.ConfigurationErrorsException.#ctor(System.String)",
+            "properties": {
+              "PackageId": "System.Configuration.ConfigurationManager",
+              "PackageNewVersion": "9.0.0-preview.6.24302.3"
+            },
+            "line": 61,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "9a1c6c9f-02bd-434f-b664-6c51dfd5aba5",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.CommandLine, 2.0.0-beta4.22272.1. Add package reference to System.CommandLine, 2.0.0-beta4.22272.1",
+          "projectPath": "Office365.PacUtil.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "public static CommandLineBuilder BuildCommandLine()",
+              "protected": "T:System.CommandLine.Builder.CommandLineBuilder"
+            },
+            "kind": "File",
+            "path": "Program.cs",
+            "snippet": "public static CommandLineBuilder BuildCommandLine()",
+            "protectedSnippet": "T:System.CommandLine.Builder.CommandLineBuilder",
+            "label": "T:System.CommandLine.Builder.CommandLineBuilder",
+            "properties": {
+              "PackageId": "System.CommandLine",
+              "PackageNewVersion": "2.0.0-beta4.22272.1"
+            },
+            "line": 47,
+            "column": 8
+          }
+        },
+        {
+          "incidentId": "8830f2c3-fd8d-4744-af68-41cfcd50fe90",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.CommandLine, 2.0.0-beta4.22272.1. Add package reference to System.CommandLine, 2.0.0-beta4.22272.1",
+          "projectPath": "Office365.PacUtil.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "return new CommandLineBuilder(root);",
+              "protected": "T:System.CommandLine.Builder.CommandLineBuilder"
+            },
+            "kind": "File",
+            "path": "Program.cs",
+            "snippet": "return new CommandLineBuilder(root);",
+            "protectedSnippet": "T:System.CommandLine.Builder.CommandLineBuilder",
+            "label": "T:System.CommandLine.Builder.CommandLineBuilder",
+            "properties": {
+              "PackageId": "System.CommandLine",
+              "PackageNewVersion": "2.0.0-beta4.22272.1"
+            },
+            "line": 84,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "494c9ce4-8781-4388-9564-8399024832aa",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.CommandLine, 2.0.0-beta4.22272.1. Add package reference to System.CommandLine, 2.0.0-beta4.22272.1",
+          "projectPath": "Office365.PacUtil.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "return new CommandLineBuilder(root);",
+              "protected": "M:System.CommandLine.Builder.CommandLineBuilder.#ctor(System.CommandLine.Command)"
+            },
+            "kind": "File",
+            "path": "Program.cs",
+            "snippet": "return new CommandLineBuilder(root);",
+            "protectedSnippet": "M:System.CommandLine.Builder.CommandLineBuilder.#ctor(System.CommandLine.Command)",
+            "label": "M:System.CommandLine.Builder.CommandLineBuilder.#ctor(System.CommandLine.Command)",
+            "properties": {
+              "PackageId": "System.CommandLine",
+              "PackageNewVersion": "2.0.0-beta4.22272.1"
+            },
+            "line": 84,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "e4302fe2-889e-43dd-b022-a73e1d9279e7",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.CommandLine, 2.0.0-beta4.22272.1. Add package reference to System.CommandLine, 2.0.0-beta4.22272.1",
+          "projectPath": "Office365.PacUtil.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "root.AddCommand(commandPacFile);",
+              "protected": "M:System.CommandLine.Command.AddCommand(System.CommandLine.Command)"
+            },
+            "kind": "File",
+            "path": "Program.cs",
+            "snippet": "root.AddCommand(commandPacFile);",
+            "protectedSnippet": "M:System.CommandLine.Command.AddCommand(System.CommandLine.Command)",
+            "label": "M:System.CommandLine.Command.AddCommand(System.CommandLine.Command)",
+            "properties": {
+              "PackageId": "System.CommandLine",
+              "PackageNewVersion": "2.0.0-beta4.22272.1"
+            },
+            "line": 82,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "86ba5f7c-27af-4c82-903d-d765fb5b7df6",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.CommandLine, 2.0.0-beta4.22272.1. Add package reference to System.CommandLine, 2.0.0-beta4.22272.1",
+          "projectPath": "Office365.PacUtil.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "commandPacFile.AddCommand(commandPacFileStatus);",
+              "protected": "M:System.CommandLine.Command.AddCommand(System.CommandLine.Command)"
+            },
+            "kind": "File",
+            "path": "Program.cs",
+            "snippet": "commandPacFile.AddCommand(commandPacFileStatus);",
+            "protectedSnippet": "M:System.CommandLine.Command.AddCommand(System.CommandLine.Command)",
+            "label": "M:System.CommandLine.Command.AddCommand(System.CommandLine.Command)",
+            "properties": {
+              "PackageId": "System.CommandLine",
+              "PackageNewVersion": "2.0.0-beta4.22272.1"
+            },
+            "line": 80,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "4d23100f-e473-441f-9135-18f840ccb9ec",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.CommandLine.NamingConventionBinder, 2.0.0-beta4.22272.1. Add package reference to System.CommandLine.NamingConventionBinder, 2.0.0-beta4.22272.1",
+          "projectPath": "Office365.PacUtil.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "commandPacFileStatus.Handler = CommandHandler.Create\u003CPacFileOptions, IHost, CancellationToken\u003E(PacCommandStatus);",
+              "protected": "T:System.CommandLine.NamingConventionBinder.CommandHandler"
+            },
+            "kind": "File",
+            "path": "Program.cs",
+            "snippet": "commandPacFileStatus.Handler = CommandHandler.Create\u003CPacFileOptions, IHost, CancellationToken\u003E(PacCommandStatus);",
+            "protectedSnippet": "T:System.CommandLine.NamingConventionBinder.CommandHandler",
+            "label": "T:System.CommandLine.NamingConventionBinder.CommandHandler",
+            "properties": {
+              "PackageId": "System.CommandLine.NamingConventionBinder",
+              "PackageNewVersion": "2.0.0-beta4.22272.1"
+            },
+            "line": 79,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "dcbaf22d-b592-4e74-9765-69ee61a8bd7d",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.CommandLine, 2.0.0-beta4.22272.1. Add package reference to System.CommandLine, 2.0.0-beta4.22272.1",
+          "projectPath": "Office365.PacUtil.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "commandPacFileStatus.Handler = CommandHandler.Create\u003CPacFileOptions, IHost, CancellationToken\u003E(PacCommandStatus);",
+              "protected": "T:System.CommandLine.Invocation.ICommandHandler"
+            },
+            "kind": "File",
+            "path": "Program.cs",
+            "snippet": "commandPacFileStatus.Handler = CommandHandler.Create\u003CPacFileOptions, IHost, CancellationToken\u003E(PacCommandStatus);",
+            "protectedSnippet": "T:System.CommandLine.Invocation.ICommandHandler",
+            "label": "T:System.CommandLine.Invocation.ICommandHandler",
+            "properties": {
+              "PackageId": "System.CommandLine",
+              "PackageNewVersion": "2.0.0-beta4.22272.1"
+            },
+            "line": 79,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "2ab4215f-2be7-4b60-909b-3468f57a8cb2",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.CommandLine, 2.0.0-beta4.22272.1. Add package reference to System.CommandLine, 2.0.0-beta4.22272.1",
+          "projectPath": "Office365.PacUtil.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "commandPacFileStatus.Handler = CommandHandler.Create\u003CPacFileOptions, IHost, CancellationToken\u003E(PacCommandStatus);",
+              "protected": "T:System.CommandLine.Invocation.ICommandHandler"
+            },
+            "kind": "File",
+            "path": "Program.cs",
+            "snippet": "commandPacFileStatus.Handler = CommandHandler.Create\u003CPacFileOptions, IHost, CancellationToken\u003E(PacCommandStatus);",
+            "protectedSnippet": "T:System.CommandLine.Invocation.ICommandHandler",
+            "label": "T:System.CommandLine.Invocation.ICommandHandler",
+            "properties": {
+              "PackageId": "System.CommandLine",
+              "PackageNewVersion": "2.0.0-beta4.22272.1"
+            },
+            "line": 79,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "ff9d273e-42c3-456d-afbb-f63ebc691db7",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.CommandLine, 2.0.0-beta4.22272.1. Add package reference to System.CommandLine, 2.0.0-beta4.22272.1",
+          "projectPath": "Office365.PacUtil.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "commandPacFileStatus.Handler = CommandHandler.Create\u003CPacFileOptions, IHost, CancellationToken\u003E(PacCommandStatus);",
+              "protected": "P:System.CommandLine.Command.Handler"
+            },
+            "kind": "File",
+            "path": "Program.cs",
+            "snippet": "commandPacFileStatus.Handler = CommandHandler.Create\u003CPacFileOptions, IHost, CancellationToken\u003E(PacCommandStatus);",
+            "protectedSnippet": "P:System.CommandLine.Command.Handler",
+            "label": "P:System.CommandLine.Command.Handler",
+            "properties": {
+              "PackageId": "System.CommandLine",
+              "PackageNewVersion": "2.0.0-beta4.22272.1"
+            },
+            "line": 79,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "ec4d6fbe-dc4e-4443-a578-10f55bcf47e0",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.CommandLine, 2.0.0-beta4.22272.1. Add package reference to System.CommandLine, 2.0.0-beta4.22272.1",
+          "projectPath": "Office365.PacUtil.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Command commandPacFileStatus = new Command(\u0022update-check\u0022, \u0022Checks for updates from Microsoft.\\nExample:\\n   .\\\\Office365.PacUtil.exe pac-file update-check\u0022);",
+              "protected": "T:System.CommandLine.Command"
+            },
+            "kind": "File",
+            "path": "Program.cs",
+            "snippet": "Command commandPacFileStatus = new Command(\u0022update-check\u0022, \u0022Checks for updates from Microsoft.\\nExample:\\n   .\\\\Office365.PacUtil.exe pac-file update-check\u0022);",
+            "protectedSnippet": "T:System.CommandLine.Command",
+            "label": "T:System.CommandLine.Command",
+            "properties": {
+              "PackageId": "System.CommandLine",
+              "PackageNewVersion": "2.0.0-beta4.22272.1"
+            },
+            "line": 78,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "a8e01890-3e9b-4446-a4c4-d3456b003ba1",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.CommandLine, 2.0.0-beta4.22272.1. Add package reference to System.CommandLine, 2.0.0-beta4.22272.1",
+          "projectPath": "Office365.PacUtil.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Command commandPacFileStatus = new Command(\u0022update-check\u0022, \u0022Checks for updates from Microsoft.\\nExample:\\n   .\\\\Office365.PacUtil.exe pac-file update-check\u0022);",
+              "protected": "M:System.CommandLine.Command.#ctor(System.String,System.String)"
+            },
+            "kind": "File",
+            "path": "Program.cs",
+            "snippet": "Command commandPacFileStatus = new Command(\u0022update-check\u0022, \u0022Checks for updates from Microsoft.\\nExample:\\n   .\\\\Office365.PacUtil.exe pac-file update-check\u0022);",
+            "protectedSnippet": "M:System.CommandLine.Command.#ctor(System.String,System.String)",
+            "label": "M:System.CommandLine.Command.#ctor(System.String,System.String)",
+            "properties": {
+              "PackageId": "System.CommandLine",
+              "PackageNewVersion": "2.0.0-beta4.22272.1"
+            },
+            "line": 78,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "1685229b-c0f7-4a04-8411-f91cfeaf6422",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.CommandLine, 2.0.0-beta4.22272.1. Add package reference to System.CommandLine, 2.0.0-beta4.22272.1",
+          "projectPath": "Office365.PacUtil.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "commandPacFile.AddCommand(commandPacFileUpdate);",
+              "protected": "M:System.CommandLine.Command.AddCommand(System.CommandLine.Command)"
+            },
+            "kind": "File",
+            "path": "Program.cs",
+            "snippet": "commandPacFile.AddCommand(commandPacFileUpdate);",
+            "protectedSnippet": "M:System.CommandLine.Command.AddCommand(System.CommandLine.Command)",
+            "label": "M:System.CommandLine.Command.AddCommand(System.CommandLine.Command)",
+            "properties": {
+              "PackageId": "System.CommandLine",
+              "PackageNewVersion": "2.0.0-beta4.22272.1"
+            },
+            "line": 75,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "8746e4c7-ce9c-4d3c-b824-b7e1bcfab646",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.CommandLine.NamingConventionBinder, 2.0.0-beta4.22272.1. Add package reference to System.CommandLine.NamingConventionBinder, 2.0.0-beta4.22272.1",
+          "projectPath": "Office365.PacUtil.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "commandPacFileUpdate.Handler = CommandHandler.Create\u003CPacFileOptions, IHost, CancellationToken\u003E(PacCommandFileUpdate);",
+              "protected": "T:System.CommandLine.NamingConventionBinder.CommandHandler"
+            },
+            "kind": "File",
+            "path": "Program.cs",
+            "snippet": "commandPacFileUpdate.Handler = CommandHandler.Create\u003CPacFileOptions, IHost, CancellationToken\u003E(PacCommandFileUpdate);",
+            "protectedSnippet": "T:System.CommandLine.NamingConventionBinder.CommandHandler",
+            "label": "T:System.CommandLine.NamingConventionBinder.CommandHandler",
+            "properties": {
+              "PackageId": "System.CommandLine.NamingConventionBinder",
+              "PackageNewVersion": "2.0.0-beta4.22272.1"
+            },
+            "line": 74,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "0f80fd4d-b0ba-4780-b9e4-391e32d83c3e",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.CommandLine, 2.0.0-beta4.22272.1. Add package reference to System.CommandLine, 2.0.0-beta4.22272.1",
+          "projectPath": "Office365.PacUtil.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "commandPacFileUpdate.Handler = CommandHandler.Create\u003CPacFileOptions, IHost, CancellationToken\u003E(PacCommandFileUpdate);",
+              "protected": "T:System.CommandLine.Invocation.ICommandHandler"
+            },
+            "kind": "File",
+            "path": "Program.cs",
+            "snippet": "commandPacFileUpdate.Handler = CommandHandler.Create\u003CPacFileOptions, IHost, CancellationToken\u003E(PacCommandFileUpdate);",
+            "protectedSnippet": "T:System.CommandLine.Invocation.ICommandHandler",
+            "label": "T:System.CommandLine.Invocation.ICommandHandler",
+            "properties": {
+              "PackageId": "System.CommandLine",
+              "PackageNewVersion": "2.0.0-beta4.22272.1"
+            },
+            "line": 74,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "ff4778ee-bd3c-4f81-8170-7d99432932ff",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.CommandLine, 2.0.0-beta4.22272.1. Add package reference to System.CommandLine, 2.0.0-beta4.22272.1",
+          "projectPath": "Office365.PacUtil.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "commandPacFileUpdate.Handler = CommandHandler.Create\u003CPacFileOptions, IHost, CancellationToken\u003E(PacCommandFileUpdate);",
+              "protected": "T:System.CommandLine.Invocation.ICommandHandler"
+            },
+            "kind": "File",
+            "path": "Program.cs",
+            "snippet": "commandPacFileUpdate.Handler = CommandHandler.Create\u003CPacFileOptions, IHost, CancellationToken\u003E(PacCommandFileUpdate);",
+            "protectedSnippet": "T:System.CommandLine.Invocation.ICommandHandler",
+            "label": "T:System.CommandLine.Invocation.ICommandHandler",
+            "properties": {
+              "PackageId": "System.CommandLine",
+              "PackageNewVersion": "2.0.0-beta4.22272.1"
+            },
+            "line": 74,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "adc46a8b-e77b-4f1d-9c1f-c82993fcf58b",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.CommandLine, 2.0.0-beta4.22272.1. Add package reference to System.CommandLine, 2.0.0-beta4.22272.1",
+          "projectPath": "Office365.PacUtil.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "commandPacFileUpdate.Handler = CommandHandler.Create\u003CPacFileOptions, IHost, CancellationToken\u003E(PacCommandFileUpdate);",
+              "protected": "P:System.CommandLine.Command.Handler"
+            },
+            "kind": "File",
+            "path": "Program.cs",
+            "snippet": "commandPacFileUpdate.Handler = CommandHandler.Create\u003CPacFileOptions, IHost, CancellationToken\u003E(PacCommandFileUpdate);",
+            "protectedSnippet": "P:System.CommandLine.Command.Handler",
+            "label": "P:System.CommandLine.Command.Handler",
+            "properties": {
+              "PackageId": "System.CommandLine",
+              "PackageNewVersion": "2.0.0-beta4.22272.1"
+            },
+            "line": 74,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "a8efde09-016e-4153-980c-5326b0d37443",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.CommandLine, 2.0.0-beta4.22272.1. Add package reference to System.CommandLine, 2.0.0-beta4.22272.1",
+          "projectPath": "Office365.PacUtil.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Command commandPacFileUpdate = new Command(\u0022generate\u0022, \u0022Generate the PAC File from template file.\\nExample:\\n   .\\\\Office365.PacUtil.exe pac-file generate --file \\\u0022proxy_template.pac\\\u0022\u0022)\r\n            {\r\n                new Option\u003CFileInfo\u003E(new []{\u0022--file\u0022, \u0022-f\u0022}, \u0022The PAC file template to be used in file generation.\u0022)\r\n                {\r\n                    IsRequired = true,\r\n                },\r\n                new Option\u003Cbool\u003E(new []{\u0022--force\u0022}, \u0022Force the PAC file generation.\u0022)\r\n                {\r\n                    IsRequired = false,\r\n                },\r\n                new Option\u003Cbool\u003E(new []{\u0022--optimize\u0022}, \u0022Optimizes event entries by moving duplicate URLs and IPs to a common section.\u0022)\r\n                {\r\n                    IsRequired = false,\r\n                },\r\n                new Option\u003Cbool\u003E(new []{\u0022--report\u0022}, \u0022Generate report of URLs and IPs from generated pacfile.\u0022)\r\n                {\r\n                    IsRequired = false,\r\n                }\r\n            };",
+              "protected": "P:System.CommandLine.Option.IsRequired"
+            },
+            "kind": "File",
+            "path": "Program.cs",
+            "snippet": "Command commandPacFileUpdate = new Command(\u0022generate\u0022, \u0022Generate the PAC File from template file.\\nExample:\\n   .\\\\Office365.PacUtil.exe pac-file generate --file \\\u0022proxy_template.pac\\\u0022\u0022)\r\n            {\r\n                new Option\u003CFileInfo\u003E(new []{\u0022--file\u0022, \u0022-f\u0022}, \u0022The PAC file template to be used in file generation.\u0022)\r\n                {\r\n                    IsRequired = true,\r\n                },\r\n                new Option\u003Cbool\u003E(new []{\u0022--force\u0022}, \u0022Force the PAC file generation.\u0022)\r\n                {\r\n                    IsRequired = false,\r\n                },\r\n                new Option\u003Cbool\u003E(new []{\u0022--optimize\u0022}, \u0022Optimizes event entries by moving duplicate URLs and IPs to a common section.\u0022)\r\n                {\r\n                    IsRequired = false,\r\n                },\r\n                new Option\u003Cbool\u003E(new []{\u0022--report\u0022}, \u0022Generate report of URLs and IPs from generated pacfile.\u0022)\r\n                {\r\n                    IsRequired = false,\r\n                }\r\n            };",
+            "protectedSnippet": "P:System.CommandLine.Option.IsRequired",
+            "label": "P:System.CommandLine.Option.IsRequired",
+            "properties": {
+              "PackageId": "System.CommandLine",
+              "PackageNewVersion": "2.0.0-beta4.22272.1"
+            },
+            "line": 55,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "c87aed8d-2da8-4956-839a-07c4573cd5b3",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.CommandLine, 2.0.0-beta4.22272.1. Add package reference to System.CommandLine, 2.0.0-beta4.22272.1",
+          "projectPath": "Office365.PacUtil.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Command commandPacFileUpdate = new Command(\u0022generate\u0022, \u0022Generate the PAC File from template file.\\nExample:\\n   .\\\\Office365.PacUtil.exe pac-file generate --file \\\u0022proxy_template.pac\\\u0022\u0022)\r\n            {\r\n                new Option\u003CFileInfo\u003E(new []{\u0022--file\u0022, \u0022-f\u0022}, \u0022The PAC file template to be used in file generation.\u0022)\r\n                {\r\n                    IsRequired = true,\r\n                },\r\n                new Option\u003Cbool\u003E(new []{\u0022--force\u0022}, \u0022Force the PAC file generation.\u0022)\r\n                {\r\n                    IsRequired = false,\r\n                },\r\n                new Option\u003Cbool\u003E(new []{\u0022--optimize\u0022}, \u0022Optimizes event entries by moving duplicate URLs and IPs to a common section.\u0022)\r\n                {\r\n                    IsRequired = false,\r\n                },\r\n                new Option\u003Cbool\u003E(new []{\u0022--report\u0022}, \u0022Generate report of URLs and IPs from generated pacfile.\u0022)\r\n                {\r\n                    IsRequired = false,\r\n                }\r\n            };",
+              "protected": "M:System.CommandLine.Command.Add(System.CommandLine.Option)"
+            },
+            "kind": "File",
+            "path": "Program.cs",
+            "snippet": "Command commandPacFileUpdate = new Command(\u0022generate\u0022, \u0022Generate the PAC File from template file.\\nExample:\\n   .\\\\Office365.PacUtil.exe pac-file generate --file \\\u0022proxy_template.pac\\\u0022\u0022)\r\n            {\r\n                new Option\u003CFileInfo\u003E(new []{\u0022--file\u0022, \u0022-f\u0022}, \u0022The PAC file template to be used in file generation.\u0022)\r\n                {\r\n                    IsRequired = true,\r\n                },\r\n                new Option\u003Cbool\u003E(new []{\u0022--force\u0022}, \u0022Force the PAC file generation.\u0022)\r\n                {\r\n                    IsRequired = false,\r\n                },\r\n                new Option\u003Cbool\u003E(new []{\u0022--optimize\u0022}, \u0022Optimizes event entries by moving duplicate URLs and IPs to a common section.\u0022)\r\n                {\r\n                    IsRequired = false,\r\n                },\r\n                new Option\u003Cbool\u003E(new []{\u0022--report\u0022}, \u0022Generate report of URLs and IPs from generated pacfile.\u0022)\r\n                {\r\n                    IsRequired = false,\r\n                }\r\n            };",
+            "protectedSnippet": "M:System.CommandLine.Command.Add(System.CommandLine.Option)",
+            "label": "M:System.CommandLine.Command.Add(System.CommandLine.Option)",
+            "properties": {
+              "PackageId": "System.CommandLine",
+              "PackageNewVersion": "2.0.0-beta4.22272.1"
+            },
+            "line": 55,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "4ce3e445-f0f9-496d-a1a5-a6059e4db92a",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.CommandLine, 2.0.0-beta4.22272.1. Add package reference to System.CommandLine, 2.0.0-beta4.22272.1",
+          "projectPath": "Office365.PacUtil.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Command commandPacFileUpdate = new Command(\u0022generate\u0022, \u0022Generate the PAC File from template file.\\nExample:\\n   .\\\\Office365.PacUtil.exe pac-file generate --file \\\u0022proxy_template.pac\\\u0022\u0022)\r\n            {\r\n                new Option\u003CFileInfo\u003E(new []{\u0022--file\u0022, \u0022-f\u0022}, \u0022The PAC file template to be used in file generation.\u0022)\r\n                {\r\n                    IsRequired = true,\r\n                },\r\n                new Option\u003Cbool\u003E(new []{\u0022--force\u0022}, \u0022Force the PAC file generation.\u0022)\r\n                {\r\n                    IsRequired = false,\r\n                },\r\n                new Option\u003Cbool\u003E(new []{\u0022--optimize\u0022}, \u0022Optimizes event entries by moving duplicate URLs and IPs to a common section.\u0022)\r\n                {\r\n                    IsRequired = false,\r\n                },\r\n                new Option\u003Cbool\u003E(new []{\u0022--report\u0022}, \u0022Generate report of URLs and IPs from generated pacfile.\u0022)\r\n                {\r\n                    IsRequired = false,\r\n                }\r\n            };",
+              "protected": "P:System.CommandLine.Option.IsRequired"
+            },
+            "kind": "File",
+            "path": "Program.cs",
+            "snippet": "Command commandPacFileUpdate = new Command(\u0022generate\u0022, \u0022Generate the PAC File from template file.\\nExample:\\n   .\\\\Office365.PacUtil.exe pac-file generate --file \\\u0022proxy_template.pac\\\u0022\u0022)\r\n            {\r\n                new Option\u003CFileInfo\u003E(new []{\u0022--file\u0022, \u0022-f\u0022}, \u0022The PAC file template to be used in file generation.\u0022)\r\n                {\r\n                    IsRequired = true,\r\n                },\r\n                new Option\u003Cbool\u003E(new []{\u0022--force\u0022}, \u0022Force the PAC file generation.\u0022)\r\n                {\r\n                    IsRequired = false,\r\n                },\r\n                new Option\u003Cbool\u003E(new []{\u0022--optimize\u0022}, \u0022Optimizes event entries by moving duplicate URLs and IPs to a common section.\u0022)\r\n                {\r\n                    IsRequired = false,\r\n                },\r\n                new Option\u003Cbool\u003E(new []{\u0022--report\u0022}, \u0022Generate report of URLs and IPs from generated pacfile.\u0022)\r\n                {\r\n                    IsRequired = false,\r\n                }\r\n            };",
+            "protectedSnippet": "P:System.CommandLine.Option.IsRequired",
+            "label": "P:System.CommandLine.Option.IsRequired",
+            "properties": {
+              "PackageId": "System.CommandLine",
+              "PackageNewVersion": "2.0.0-beta4.22272.1"
+            },
+            "line": 55,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "58290546-0804-419c-bb54-10d5d37a5783",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.CommandLine, 2.0.0-beta4.22272.1. Add package reference to System.CommandLine, 2.0.0-beta4.22272.1",
+          "projectPath": "Office365.PacUtil.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Command commandPacFileUpdate = new Command(\u0022generate\u0022, \u0022Generate the PAC File from template file.\\nExample:\\n   .\\\\Office365.PacUtil.exe pac-file generate --file \\\u0022proxy_template.pac\\\u0022\u0022)\r\n            {\r\n                new Option\u003CFileInfo\u003E(new []{\u0022--file\u0022, \u0022-f\u0022}, \u0022The PAC file template to be used in file generation.\u0022)\r\n                {\r\n                    IsRequired = true,\r\n                },\r\n                new Option\u003Cbool\u003E(new []{\u0022--force\u0022}, \u0022Force the PAC file generation.\u0022)\r\n                {\r\n                    IsRequired = false,\r\n                },\r\n                new Option\u003Cbool\u003E(new []{\u0022--optimize\u0022}, \u0022Optimizes event entries by moving duplicate URLs and IPs to a common section.\u0022)\r\n                {\r\n                    IsRequired = false,\r\n                },\r\n                new Option\u003Cbool\u003E(new []{\u0022--report\u0022}, \u0022Generate report of URLs and IPs from generated pacfile.\u0022)\r\n                {\r\n                    IsRequired = false,\r\n                }\r\n            };",
+              "protected": "M:System.CommandLine.Command.Add(System.CommandLine.Option)"
+            },
+            "kind": "File",
+            "path": "Program.cs",
+            "snippet": "Command commandPacFileUpdate = new Command(\u0022generate\u0022, \u0022Generate the PAC File from template file.\\nExample:\\n   .\\\\Office365.PacUtil.exe pac-file generate --file \\\u0022proxy_template.pac\\\u0022\u0022)\r\n            {\r\n                new Option\u003CFileInfo\u003E(new []{\u0022--file\u0022, \u0022-f\u0022}, \u0022The PAC file template to be used in file generation.\u0022)\r\n                {\r\n                    IsRequired = true,\r\n                },\r\n                new Option\u003Cbool\u003E(new []{\u0022--force\u0022}, \u0022Force the PAC file generation.\u0022)\r\n                {\r\n                    IsRequired = false,\r\n                },\r\n                new Option\u003Cbool\u003E(new []{\u0022--optimize\u0022}, \u0022Optimizes event entries by moving duplicate URLs and IPs to a common section.\u0022)\r\n                {\r\n                    IsRequired = false,\r\n                },\r\n                new Option\u003Cbool\u003E(new []{\u0022--report\u0022}, \u0022Generate report of URLs and IPs from generated pacfile.\u0022)\r\n                {\r\n                    IsRequired = false,\r\n                }\r\n            };",
+            "protectedSnippet": "M:System.CommandLine.Command.Add(System.CommandLine.Option)",
+            "label": "M:System.CommandLine.Command.Add(System.CommandLine.Option)",
+            "properties": {
+              "PackageId": "System.CommandLine",
+              "PackageNewVersion": "2.0.0-beta4.22272.1"
+            },
+            "line": 55,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "b8d5ce12-4caf-4421-b0e9-4ada5106efbc",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.CommandLine, 2.0.0-beta4.22272.1. Add package reference to System.CommandLine, 2.0.0-beta4.22272.1",
+          "projectPath": "Office365.PacUtil.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Command commandPacFileUpdate = new Command(\u0022generate\u0022, \u0022Generate the PAC File from template file.\\nExample:\\n   .\\\\Office365.PacUtil.exe pac-file generate --file \\\u0022proxy_template.pac\\\u0022\u0022)\r\n            {\r\n                new Option\u003CFileInfo\u003E(new []{\u0022--file\u0022, \u0022-f\u0022}, \u0022The PAC file template to be used in file generation.\u0022)\r\n                {\r\n                    IsRequired = true,\r\n                },\r\n                new Option\u003Cbool\u003E(new []{\u0022--force\u0022}, \u0022Force the PAC file generation.\u0022)\r\n                {\r\n                    IsRequired = false,\r\n                },\r\n                new Option\u003Cbool\u003E(new []{\u0022--optimize\u0022}, \u0022Optimizes event entries by moving duplicate URLs and IPs to a common section.\u0022)\r\n                {\r\n                    IsRequired = false,\r\n                },\r\n                new Option\u003Cbool\u003E(new []{\u0022--report\u0022}, \u0022Generate report of URLs and IPs from generated pacfile.\u0022)\r\n                {\r\n                    IsRequired = false,\r\n                }\r\n            };",
+              "protected": "P:System.CommandLine.Option.IsRequired"
+            },
+            "kind": "File",
+            "path": "Program.cs",
+            "snippet": "Command commandPacFileUpdate = new Command(\u0022generate\u0022, \u0022Generate the PAC File from template file.\\nExample:\\n   .\\\\Office365.PacUtil.exe pac-file generate --file \\\u0022proxy_template.pac\\\u0022\u0022)\r\n            {\r\n                new Option\u003CFileInfo\u003E(new []{\u0022--file\u0022, \u0022-f\u0022}, \u0022The PAC file template to be used in file generation.\u0022)\r\n                {\r\n                    IsRequired = true,\r\n                },\r\n                new Option\u003Cbool\u003E(new []{\u0022--force\u0022}, \u0022Force the PAC file generation.\u0022)\r\n                {\r\n                    IsRequired = false,\r\n                },\r\n                new Option\u003Cbool\u003E(new []{\u0022--optimize\u0022}, \u0022Optimizes event entries by moving duplicate URLs and IPs to a common section.\u0022)\r\n                {\r\n                    IsRequired = false,\r\n                },\r\n                new Option\u003Cbool\u003E(new []{\u0022--report\u0022}, \u0022Generate report of URLs and IPs from generated pacfile.\u0022)\r\n                {\r\n                    IsRequired = false,\r\n                }\r\n            };",
+            "protectedSnippet": "P:System.CommandLine.Option.IsRequired",
+            "label": "P:System.CommandLine.Option.IsRequired",
+            "properties": {
+              "PackageId": "System.CommandLine",
+              "PackageNewVersion": "2.0.0-beta4.22272.1"
+            },
+            "line": 55,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "6f6b9066-955a-43b2-826c-487730400b9c",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.CommandLine, 2.0.0-beta4.22272.1. Add package reference to System.CommandLine, 2.0.0-beta4.22272.1",
+          "projectPath": "Office365.PacUtil.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Command commandPacFileUpdate = new Command(\u0022generate\u0022, \u0022Generate the PAC File from template file.\\nExample:\\n   .\\\\Office365.PacUtil.exe pac-file generate --file \\\u0022proxy_template.pac\\\u0022\u0022)\r\n            {\r\n                new Option\u003CFileInfo\u003E(new []{\u0022--file\u0022, \u0022-f\u0022}, \u0022The PAC file template to be used in file generation.\u0022)\r\n                {\r\n                    IsRequired = true,\r\n                },\r\n                new Option\u003Cbool\u003E(new []{\u0022--force\u0022}, \u0022Force the PAC file generation.\u0022)\r\n                {\r\n                    IsRequired = false,\r\n                },\r\n                new Option\u003Cbool\u003E(new []{\u0022--optimize\u0022}, \u0022Optimizes event entries by moving duplicate URLs and IPs to a common section.\u0022)\r\n                {\r\n                    IsRequired = false,\r\n                },\r\n                new Option\u003Cbool\u003E(new []{\u0022--report\u0022}, \u0022Generate report of URLs and IPs from generated pacfile.\u0022)\r\n                {\r\n                    IsRequired = false,\r\n                }\r\n            };",
+              "protected": "M:System.CommandLine.Command.Add(System.CommandLine.Option)"
+            },
+            "kind": "File",
+            "path": "Program.cs",
+            "snippet": "Command commandPacFileUpdate = new Command(\u0022generate\u0022, \u0022Generate the PAC File from template file.\\nExample:\\n   .\\\\Office365.PacUtil.exe pac-file generate --file \\\u0022proxy_template.pac\\\u0022\u0022)\r\n            {\r\n                new Option\u003CFileInfo\u003E(new []{\u0022--file\u0022, \u0022-f\u0022}, \u0022The PAC file template to be used in file generation.\u0022)\r\n                {\r\n                    IsRequired = true,\r\n                },\r\n                new Option\u003Cbool\u003E(new []{\u0022--force\u0022}, \u0022Force the PAC file generation.\u0022)\r\n                {\r\n                    IsRequired = false,\r\n                },\r\n                new Option\u003Cbool\u003E(new []{\u0022--optimize\u0022}, \u0022Optimizes event entries by moving duplicate URLs and IPs to a common section.\u0022)\r\n                {\r\n                    IsRequired = false,\r\n                },\r\n                new Option\u003Cbool\u003E(new []{\u0022--report\u0022}, \u0022Generate report of URLs and IPs from generated pacfile.\u0022)\r\n                {\r\n                    IsRequired = false,\r\n                }\r\n            };",
+            "protectedSnippet": "M:System.CommandLine.Command.Add(System.CommandLine.Option)",
+            "label": "M:System.CommandLine.Command.Add(System.CommandLine.Option)",
+            "properties": {
+              "PackageId": "System.CommandLine",
+              "PackageNewVersion": "2.0.0-beta4.22272.1"
+            },
+            "line": 55,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "4278c8e9-2432-47e6-948f-895e227b6e77",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.CommandLine, 2.0.0-beta4.22272.1. Add package reference to System.CommandLine, 2.0.0-beta4.22272.1",
+          "projectPath": "Office365.PacUtil.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Command commandPacFileUpdate = new Command(\u0022generate\u0022, \u0022Generate the PAC File from template file.\\nExample:\\n   .\\\\Office365.PacUtil.exe pac-file generate --file \\\u0022proxy_template.pac\\\u0022\u0022)\r\n            {\r\n                new Option\u003CFileInfo\u003E(new []{\u0022--file\u0022, \u0022-f\u0022}, \u0022The PAC file template to be used in file generation.\u0022)\r\n                {\r\n                    IsRequired = true,\r\n                },\r\n                new Option\u003Cbool\u003E(new []{\u0022--force\u0022}, \u0022Force the PAC file generation.\u0022)\r\n                {\r\n                    IsRequired = false,\r\n                },\r\n                new Option\u003Cbool\u003E(new []{\u0022--optimize\u0022}, \u0022Optimizes event entries by moving duplicate URLs and IPs to a common section.\u0022)\r\n                {\r\n                    IsRequired = false,\r\n                },\r\n                new Option\u003Cbool\u003E(new []{\u0022--report\u0022}, \u0022Generate report of URLs and IPs from generated pacfile.\u0022)\r\n                {\r\n                    IsRequired = false,\r\n                }\r\n            };",
+              "protected": "P:System.CommandLine.Option.IsRequired"
+            },
+            "kind": "File",
+            "path": "Program.cs",
+            "snippet": "Command commandPacFileUpdate = new Command(\u0022generate\u0022, \u0022Generate the PAC File from template file.\\nExample:\\n   .\\\\Office365.PacUtil.exe pac-file generate --file \\\u0022proxy_template.pac\\\u0022\u0022)\r\n            {\r\n                new Option\u003CFileInfo\u003E(new []{\u0022--file\u0022, \u0022-f\u0022}, \u0022The PAC file template to be used in file generation.\u0022)\r\n                {\r\n                    IsRequired = true,\r\n                },\r\n                new Option\u003Cbool\u003E(new []{\u0022--force\u0022}, \u0022Force the PAC file generation.\u0022)\r\n                {\r\n                    IsRequired = false,\r\n                },\r\n                new Option\u003Cbool\u003E(new []{\u0022--optimize\u0022}, \u0022Optimizes event entries by moving duplicate URLs and IPs to a common section.\u0022)\r\n                {\r\n                    IsRequired = false,\r\n                },\r\n                new Option\u003Cbool\u003E(new []{\u0022--report\u0022}, \u0022Generate report of URLs and IPs from generated pacfile.\u0022)\r\n                {\r\n                    IsRequired = false,\r\n                }\r\n            };",
+            "protectedSnippet": "P:System.CommandLine.Option.IsRequired",
+            "label": "P:System.CommandLine.Option.IsRequired",
+            "properties": {
+              "PackageId": "System.CommandLine",
+              "PackageNewVersion": "2.0.0-beta4.22272.1"
+            },
+            "line": 55,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "bcc3d112-845b-4064-b0b0-7da0d89dc2e0",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.CommandLine, 2.0.0-beta4.22272.1. Add package reference to System.CommandLine, 2.0.0-beta4.22272.1",
+          "projectPath": "Office365.PacUtil.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Command commandPacFileUpdate = new Command(\u0022generate\u0022, \u0022Generate the PAC File from template file.\\nExample:\\n   .\\\\Office365.PacUtil.exe pac-file generate --file \\\u0022proxy_template.pac\\\u0022\u0022)\r\n            {\r\n                new Option\u003CFileInfo\u003E(new []{\u0022--file\u0022, \u0022-f\u0022}, \u0022The PAC file template to be used in file generation.\u0022)\r\n                {\r\n                    IsRequired = true,\r\n                },\r\n                new Option\u003Cbool\u003E(new []{\u0022--force\u0022}, \u0022Force the PAC file generation.\u0022)\r\n                {\r\n                    IsRequired = false,\r\n                },\r\n                new Option\u003Cbool\u003E(new []{\u0022--optimize\u0022}, \u0022Optimizes event entries by moving duplicate URLs and IPs to a common section.\u0022)\r\n                {\r\n                    IsRequired = false,\r\n                },\r\n                new Option\u003Cbool\u003E(new []{\u0022--report\u0022}, \u0022Generate report of URLs and IPs from generated pacfile.\u0022)\r\n                {\r\n                    IsRequired = false,\r\n                }\r\n            };",
+              "protected": "M:System.CommandLine.Command.Add(System.CommandLine.Option)"
+            },
+            "kind": "File",
+            "path": "Program.cs",
+            "snippet": "Command commandPacFileUpdate = new Command(\u0022generate\u0022, \u0022Generate the PAC File from template file.\\nExample:\\n   .\\\\Office365.PacUtil.exe pac-file generate --file \\\u0022proxy_template.pac\\\u0022\u0022)\r\n            {\r\n                new Option\u003CFileInfo\u003E(new []{\u0022--file\u0022, \u0022-f\u0022}, \u0022The PAC file template to be used in file generation.\u0022)\r\n                {\r\n                    IsRequired = true,\r\n                },\r\n                new Option\u003Cbool\u003E(new []{\u0022--force\u0022}, \u0022Force the PAC file generation.\u0022)\r\n                {\r\n                    IsRequired = false,\r\n                },\r\n                new Option\u003Cbool\u003E(new []{\u0022--optimize\u0022}, \u0022Optimizes event entries by moving duplicate URLs and IPs to a common section.\u0022)\r\n                {\r\n                    IsRequired = false,\r\n                },\r\n                new Option\u003Cbool\u003E(new []{\u0022--report\u0022}, \u0022Generate report of URLs and IPs from generated pacfile.\u0022)\r\n                {\r\n                    IsRequired = false,\r\n                }\r\n            };",
+            "protectedSnippet": "M:System.CommandLine.Command.Add(System.CommandLine.Option)",
+            "label": "M:System.CommandLine.Command.Add(System.CommandLine.Option)",
+            "properties": {
+              "PackageId": "System.CommandLine",
+              "PackageNewVersion": "2.0.0-beta4.22272.1"
+            },
+            "line": 55,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "5acc69eb-d895-47a1-bd34-ed79269782d9",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.CommandLine, 2.0.0-beta4.22272.1. Add package reference to System.CommandLine, 2.0.0-beta4.22272.1",
+          "projectPath": "Office365.PacUtil.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Command commandPacFileUpdate = new Command(\u0022generate\u0022, \u0022Generate the PAC File from template file.\\nExample:\\n   .\\\\Office365.PacUtil.exe pac-file generate --file \\\u0022proxy_template.pac\\\u0022\u0022)\r\n            {\r\n                new Option\u003CFileInfo\u003E(new []{\u0022--file\u0022, \u0022-f\u0022}, \u0022The PAC file template to be used in file generation.\u0022)\r\n                {\r\n                    IsRequired = true,\r\n                },\r\n                new Option\u003Cbool\u003E(new []{\u0022--force\u0022}, \u0022Force the PAC file generation.\u0022)\r\n                {\r\n                    IsRequired = false,\r\n                },\r\n                new Option\u003Cbool\u003E(new []{\u0022--optimize\u0022}, \u0022Optimizes event entries by moving duplicate URLs and IPs to a common section.\u0022)\r\n                {\r\n                    IsRequired = false,\r\n                },\r\n                new Option\u003Cbool\u003E(new []{\u0022--report\u0022}, \u0022Generate report of URLs and IPs from generated pacfile.\u0022)\r\n                {\r\n                    IsRequired = false,\r\n                }\r\n            };",
+              "protected": "T:System.CommandLine.Command"
+            },
+            "kind": "File",
+            "path": "Program.cs",
+            "snippet": "Command commandPacFileUpdate = new Command(\u0022generate\u0022, \u0022Generate the PAC File from template file.\\nExample:\\n   .\\\\Office365.PacUtil.exe pac-file generate --file \\\u0022proxy_template.pac\\\u0022\u0022)\r\n            {\r\n                new Option\u003CFileInfo\u003E(new []{\u0022--file\u0022, \u0022-f\u0022}, \u0022The PAC file template to be used in file generation.\u0022)\r\n                {\r\n                    IsRequired = true,\r\n                },\r\n                new Option\u003Cbool\u003E(new []{\u0022--force\u0022}, \u0022Force the PAC file generation.\u0022)\r\n                {\r\n                    IsRequired = false,\r\n                },\r\n                new Option\u003Cbool\u003E(new []{\u0022--optimize\u0022}, \u0022Optimizes event entries by moving duplicate URLs and IPs to a common section.\u0022)\r\n                {\r\n                    IsRequired = false,\r\n                },\r\n                new Option\u003Cbool\u003E(new []{\u0022--report\u0022}, \u0022Generate report of URLs and IPs from generated pacfile.\u0022)\r\n                {\r\n                    IsRequired = false,\r\n                }\r\n            };",
+            "protectedSnippet": "T:System.CommandLine.Command",
+            "label": "T:System.CommandLine.Command",
+            "properties": {
+              "PackageId": "System.CommandLine",
+              "PackageNewVersion": "2.0.0-beta4.22272.1"
+            },
+            "line": 55,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "0952a14e-5f60-4650-9b5e-670bb664c5ad",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.CommandLine, 2.0.0-beta4.22272.1. Add package reference to System.CommandLine, 2.0.0-beta4.22272.1",
+          "projectPath": "Office365.PacUtil.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Command commandPacFileUpdate = new Command(\u0022generate\u0022, \u0022Generate the PAC File from template file.\\nExample:\\n   .\\\\Office365.PacUtil.exe pac-file generate --file \\\u0022proxy_template.pac\\\u0022\u0022)\r\n            {\r\n                new Option\u003CFileInfo\u003E(new []{\u0022--file\u0022, \u0022-f\u0022}, \u0022The PAC file template to be used in file generation.\u0022)\r\n                {\r\n                    IsRequired = true,\r\n                },\r\n                new Option\u003Cbool\u003E(new []{\u0022--force\u0022}, \u0022Force the PAC file generation.\u0022)\r\n                {\r\n                    IsRequired = false,\r\n                },\r\n                new Option\u003Cbool\u003E(new []{\u0022--optimize\u0022}, \u0022Optimizes event entries by moving duplicate URLs and IPs to a common section.\u0022)\r\n                {\r\n                    IsRequired = false,\r\n                },\r\n                new Option\u003Cbool\u003E(new []{\u0022--report\u0022}, \u0022Generate report of URLs and IPs from generated pacfile.\u0022)\r\n                {\r\n                    IsRequired = false,\r\n                }\r\n            };",
+              "protected": "M:System.CommandLine.Command.#ctor(System.String,System.String)"
+            },
+            "kind": "File",
+            "path": "Program.cs",
+            "snippet": "Command commandPacFileUpdate = new Command(\u0022generate\u0022, \u0022Generate the PAC File from template file.\\nExample:\\n   .\\\\Office365.PacUtil.exe pac-file generate --file \\\u0022proxy_template.pac\\\u0022\u0022)\r\n            {\r\n                new Option\u003CFileInfo\u003E(new []{\u0022--file\u0022, \u0022-f\u0022}, \u0022The PAC file template to be used in file generation.\u0022)\r\n                {\r\n                    IsRequired = true,\r\n                },\r\n                new Option\u003Cbool\u003E(new []{\u0022--force\u0022}, \u0022Force the PAC file generation.\u0022)\r\n                {\r\n                    IsRequired = false,\r\n                },\r\n                new Option\u003Cbool\u003E(new []{\u0022--optimize\u0022}, \u0022Optimizes event entries by moving duplicate URLs and IPs to a common section.\u0022)\r\n                {\r\n                    IsRequired = false,\r\n                },\r\n                new Option\u003Cbool\u003E(new []{\u0022--report\u0022}, \u0022Generate report of URLs and IPs from generated pacfile.\u0022)\r\n                {\r\n                    IsRequired = false,\r\n                }\r\n            };",
+            "protectedSnippet": "M:System.CommandLine.Command.#ctor(System.String,System.String)",
+            "label": "M:System.CommandLine.Command.#ctor(System.String,System.String)",
+            "properties": {
+              "PackageId": "System.CommandLine",
+              "PackageNewVersion": "2.0.0-beta4.22272.1"
+            },
+            "line": 55,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "39d7e5ea-be25-4836-8b3e-dcbf3545f32f",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.CommandLine, 2.0.0-beta4.22272.1. Add package reference to System.CommandLine, 2.0.0-beta4.22272.1",
+          "projectPath": "Office365.PacUtil.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "var commandPacFile = new Command(\u0022pac-file\u0022, \u0022Command to work with the Office 365 IP and Url web service.\u0022);",
+              "protected": "T:System.CommandLine.Command"
+            },
+            "kind": "File",
+            "path": "Program.cs",
+            "snippet": "var commandPacFile = new Command(\u0022pac-file\u0022, \u0022Command to work with the Office 365 IP and Url web service.\u0022);",
+            "protectedSnippet": "T:System.CommandLine.Command",
+            "label": "T:System.CommandLine.Command",
+            "properties": {
+              "PackageId": "System.CommandLine",
+              "PackageNewVersion": "2.0.0-beta4.22272.1"
+            },
+            "line": 52,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "697e4471-3d80-418b-8014-d95c35a9a31b",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.CommandLine, 2.0.0-beta4.22272.1. Add package reference to System.CommandLine, 2.0.0-beta4.22272.1",
+          "projectPath": "Office365.PacUtil.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "var commandPacFile = new Command(\u0022pac-file\u0022, \u0022Command to work with the Office 365 IP and Url web service.\u0022);",
+              "protected": "M:System.CommandLine.Command.#ctor(System.String,System.String)"
+            },
+            "kind": "File",
+            "path": "Program.cs",
+            "snippet": "var commandPacFile = new Command(\u0022pac-file\u0022, \u0022Command to work with the Office 365 IP and Url web service.\u0022);",
+            "protectedSnippet": "M:System.CommandLine.Command.#ctor(System.String,System.String)",
+            "label": "M:System.CommandLine.Command.#ctor(System.String,System.String)",
+            "properties": {
+              "PackageId": "System.CommandLine",
+              "PackageNewVersion": "2.0.0-beta4.22272.1"
+            },
+            "line": 52,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "26cc79e6-6fda-4a51-a636-bc537cf4a7e2",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.CommandLine, 2.0.0-beta4.22272.1. Add package reference to System.CommandLine, 2.0.0-beta4.22272.1",
+          "projectPath": "Office365.PacUtil.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "var root = new RootCommand(\u0022Proxy Auto Configuration (PAC) File Utility for Office 365.\u0022);",
+              "protected": "T:System.CommandLine.RootCommand"
+            },
+            "kind": "File",
+            "path": "Program.cs",
+            "snippet": "var root = new RootCommand(\u0022Proxy Auto Configuration (PAC) File Utility for Office 365.\u0022);",
+            "protectedSnippet": "T:System.CommandLine.RootCommand",
+            "label": "T:System.CommandLine.RootCommand",
+            "properties": {
+              "PackageId": "System.CommandLine",
+              "PackageNewVersion": "2.0.0-beta4.22272.1"
+            },
+            "line": 49,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "8269ace4-73b2-4012-968b-9317f5351c4a",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.CommandLine, 2.0.0-beta4.22272.1. Add package reference to System.CommandLine, 2.0.0-beta4.22272.1",
+          "projectPath": "Office365.PacUtil.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "var root = new RootCommand(\u0022Proxy Auto Configuration (PAC) File Utility for Office 365.\u0022);",
+              "protected": "M:System.CommandLine.RootCommand.#ctor(System.String)"
+            },
+            "kind": "File",
+            "path": "Program.cs",
+            "snippet": "var root = new RootCommand(\u0022Proxy Auto Configuration (PAC) File Utility for Office 365.\u0022);",
+            "protectedSnippet": "M:System.CommandLine.RootCommand.#ctor(System.String)",
+            "label": "M:System.CommandLine.RootCommand.#ctor(System.String)",
+            "properties": {
+              "PackageId": "System.CommandLine",
+              "PackageNewVersion": "2.0.0-beta4.22272.1"
+            },
+            "line": 49,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "88edba60-89ed-4a22-b14f-d15abf792ba9",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.CommandLine, 2.0.0-beta4.22272.1. Add package reference to System.CommandLine, 2.0.0-beta4.22272.1",
+          "projectPath": "Office365.PacUtil.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "await BuildCommandLine()\r\n                    .UseHost(_ =\u003E Host.CreateDefaultBuilder(),\r\n                        host =\u003E\r\n                        {\r\n                            host.ConfigureServices(services =\u003E\r\n                            {\r\n                                services.AddSingleton\u003CIPacFileService, PacFileService\u003E();\r\n                            });\r\n                        })\r\n                    .UseDefaults()\r\n                    .CancelOnProcessTermination()\r\n                    .Build()\r\n                    .InvokeAsync(args);",
+              "protected": "T:System.CommandLine.Builder.CommandLineBuilder"
+            },
+            "kind": "File",
+            "path": "Program.cs",
+            "snippet": "await BuildCommandLine()\r\n                    .UseHost(_ =\u003E Host.CreateDefaultBuilder(),\r\n                        host =\u003E\r\n                        {\r\n                            host.ConfigureServices(services =\u003E\r\n                            {\r\n                                services.AddSingleton\u003CIPacFileService, PacFileService\u003E();\r\n                            });\r\n                        })\r\n                    .UseDefaults()\r\n                    .CancelOnProcessTermination()\r\n                    .Build()\r\n                    .InvokeAsync(args);",
+            "protectedSnippet": "T:System.CommandLine.Builder.CommandLineBuilder",
+            "label": "T:System.CommandLine.Builder.CommandLineBuilder",
+            "properties": {
+              "PackageId": "System.CommandLine",
+              "PackageNewVersion": "2.0.0-beta4.22272.1"
+            },
+            "line": 23,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "bd77aac7-025a-4dd4-99c5-cf18d5c232bc",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.CommandLine.Hosting, 0.4.0-alpha.22272.1. Add package reference to System.CommandLine.Hosting, 0.4.0-alpha.22272.1",
+          "projectPath": "Office365.PacUtil.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "await BuildCommandLine()\r\n                    .UseHost(_ =\u003E Host.CreateDefaultBuilder(),\r\n                        host =\u003E\r\n                        {\r\n                            host.ConfigureServices(services =\u003E\r\n                            {\r\n                                services.AddSingleton\u003CIPacFileService, PacFileService\u003E();\r\n                            });\r\n                        })\r\n                    .UseDefaults()\r\n                    .CancelOnProcessTermination()\r\n                    .Build()\r\n                    .InvokeAsync(args);",
+              "protected": "T:System.CommandLine.Hosting.HostingExtensions"
+            },
+            "kind": "File",
+            "path": "Program.cs",
+            "snippet": "await BuildCommandLine()\r\n                    .UseHost(_ =\u003E Host.CreateDefaultBuilder(),\r\n                        host =\u003E\r\n                        {\r\n                            host.ConfigureServices(services =\u003E\r\n                            {\r\n                                services.AddSingleton\u003CIPacFileService, PacFileService\u003E();\r\n                            });\r\n                        })\r\n                    .UseDefaults()\r\n                    .CancelOnProcessTermination()\r\n                    .Build()\r\n                    .InvokeAsync(args);",
+            "protectedSnippet": "T:System.CommandLine.Hosting.HostingExtensions",
+            "label": "T:System.CommandLine.Hosting.HostingExtensions",
+            "properties": {
+              "PackageId": "System.CommandLine.Hosting",
+              "PackageNewVersion": "0.4.0-alpha.22272.1"
+            },
+            "line": 23,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "a76e0529-c149-4437-baf9-a080a0a6bde5",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.CommandLine, 2.0.0-beta4.22272.1. Add package reference to System.CommandLine, 2.0.0-beta4.22272.1",
+          "projectPath": "Office365.PacUtil.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "await BuildCommandLine()\r\n                    .UseHost(_ =\u003E Host.CreateDefaultBuilder(),\r\n                        host =\u003E\r\n                        {\r\n                            host.ConfigureServices(services =\u003E\r\n                            {\r\n                                services.AddSingleton\u003CIPacFileService, PacFileService\u003E();\r\n                            });\r\n                        })\r\n                    .UseDefaults()\r\n                    .CancelOnProcessTermination()\r\n                    .Build()\r\n                    .InvokeAsync(args);",
+              "protected": "T:System.CommandLine.Builder.CommandLineBuilder"
+            },
+            "kind": "File",
+            "path": "Program.cs",
+            "snippet": "await BuildCommandLine()\r\n                    .UseHost(_ =\u003E Host.CreateDefaultBuilder(),\r\n                        host =\u003E\r\n                        {\r\n                            host.ConfigureServices(services =\u003E\r\n                            {\r\n                                services.AddSingleton\u003CIPacFileService, PacFileService\u003E();\r\n                            });\r\n                        })\r\n                    .UseDefaults()\r\n                    .CancelOnProcessTermination()\r\n                    .Build()\r\n                    .InvokeAsync(args);",
+            "protectedSnippet": "T:System.CommandLine.Builder.CommandLineBuilder",
+            "label": "T:System.CommandLine.Builder.CommandLineBuilder",
+            "properties": {
+              "PackageId": "System.CommandLine",
+              "PackageNewVersion": "2.0.0-beta4.22272.1"
+            },
+            "line": 23,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "755a22d7-3d94-4a1c-84ad-ebbb98ebe4b8",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.CommandLine.Hosting, 0.4.0-alpha.22272.1. Add package reference to System.CommandLine.Hosting, 0.4.0-alpha.22272.1",
+          "projectPath": "Office365.PacUtil.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "await BuildCommandLine()\r\n                    .UseHost(_ =\u003E Host.CreateDefaultBuilder(),\r\n                        host =\u003E\r\n                        {\r\n                            host.ConfigureServices(services =\u003E\r\n                            {\r\n                                services.AddSingleton\u003CIPacFileService, PacFileService\u003E();\r\n                            });\r\n                        })\r\n                    .UseDefaults()\r\n                    .CancelOnProcessTermination()\r\n                    .Build()\r\n                    .InvokeAsync(args);",
+              "protected": "M:System.CommandLine.Hosting.HostingExtensions.UseHost(System.CommandLine.Builder.CommandLineBuilder,System.Func{System.String[],Microsoft.Extensions.Hosting.IHostBuilder},System.Action{Microsoft.Extensions.Hosting.IHostBuilder})"
+            },
+            "kind": "File",
+            "path": "Program.cs",
+            "snippet": "await BuildCommandLine()\r\n                    .UseHost(_ =\u003E Host.CreateDefaultBuilder(),\r\n                        host =\u003E\r\n                        {\r\n                            host.ConfigureServices(services =\u003E\r\n                            {\r\n                                services.AddSingleton\u003CIPacFileService, PacFileService\u003E();\r\n                            });\r\n                        })\r\n                    .UseDefaults()\r\n                    .CancelOnProcessTermination()\r\n                    .Build()\r\n                    .InvokeAsync(args);",
+            "protectedSnippet": "M:System.CommandLine.Hosting.HostingExtensions.UseHost(System.CommandLine.Builder.CommandLineBuilder,System.Func{System.String[],Microsoft.Extensions.Hosting.IHostBuilder},System.Action{Microsoft.Extensions.Hosting.IHostBuilder})",
+            "label": "M:System.CommandLine.Hosting.HostingExtensions.UseHost(System.CommandLine.Builder.CommandLineBuilder,System.Func{System.String[],Microsoft.Extensions.Hosting.IHostBuilder},System.Action{Microsoft.Extensions.Hosting.IHostBuilder})",
+            "properties": {
+              "PackageId": "System.CommandLine.Hosting",
+              "PackageNewVersion": "0.4.0-alpha.22272.1"
+            },
+            "line": 23,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "0996c34d-17d5-4235-becf-4d7cd84f1ae2",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.CommandLine, 2.0.0-beta4.22272.1. Add package reference to System.CommandLine, 2.0.0-beta4.22272.1",
+          "projectPath": "Office365.PacUtil.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "await BuildCommandLine()\r\n                    .UseHost(_ =\u003E Host.CreateDefaultBuilder(),\r\n                        host =\u003E\r\n                        {\r\n                            host.ConfigureServices(services =\u003E\r\n                            {\r\n                                services.AddSingleton\u003CIPacFileService, PacFileService\u003E();\r\n                            });\r\n                        })\r\n                    .UseDefaults()\r\n                    .CancelOnProcessTermination()\r\n                    .Build()\r\n                    .InvokeAsync(args);",
+              "protected": "T:System.CommandLine.Builder.CommandLineBuilderExtensions"
+            },
+            "kind": "File",
+            "path": "Program.cs",
+            "snippet": "await BuildCommandLine()\r\n                    .UseHost(_ =\u003E Host.CreateDefaultBuilder(),\r\n                        host =\u003E\r\n                        {\r\n                            host.ConfigureServices(services =\u003E\r\n                            {\r\n                                services.AddSingleton\u003CIPacFileService, PacFileService\u003E();\r\n                            });\r\n                        })\r\n                    .UseDefaults()\r\n                    .CancelOnProcessTermination()\r\n                    .Build()\r\n                    .InvokeAsync(args);",
+            "protectedSnippet": "T:System.CommandLine.Builder.CommandLineBuilderExtensions",
+            "label": "T:System.CommandLine.Builder.CommandLineBuilderExtensions",
+            "properties": {
+              "PackageId": "System.CommandLine",
+              "PackageNewVersion": "2.0.0-beta4.22272.1"
+            },
+            "line": 23,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "7a1435dd-c885-4368-bb0a-5f3db6c2057d",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.CommandLine, 2.0.0-beta4.22272.1. Add package reference to System.CommandLine, 2.0.0-beta4.22272.1",
+          "projectPath": "Office365.PacUtil.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "await BuildCommandLine()\r\n                    .UseHost(_ =\u003E Host.CreateDefaultBuilder(),\r\n                        host =\u003E\r\n                        {\r\n                            host.ConfigureServices(services =\u003E\r\n                            {\r\n                                services.AddSingleton\u003CIPacFileService, PacFileService\u003E();\r\n                            });\r\n                        })\r\n                    .UseDefaults()\r\n                    .CancelOnProcessTermination()\r\n                    .Build()\r\n                    .InvokeAsync(args);",
+              "protected": "T:System.CommandLine.Builder.CommandLineBuilder"
+            },
+            "kind": "File",
+            "path": "Program.cs",
+            "snippet": "await BuildCommandLine()\r\n                    .UseHost(_ =\u003E Host.CreateDefaultBuilder(),\r\n                        host =\u003E\r\n                        {\r\n                            host.ConfigureServices(services =\u003E\r\n                            {\r\n                                services.AddSingleton\u003CIPacFileService, PacFileService\u003E();\r\n                            });\r\n                        })\r\n                    .UseDefaults()\r\n                    .CancelOnProcessTermination()\r\n                    .Build()\r\n                    .InvokeAsync(args);",
+            "protectedSnippet": "T:System.CommandLine.Builder.CommandLineBuilder",
+            "label": "T:System.CommandLine.Builder.CommandLineBuilder",
+            "properties": {
+              "PackageId": "System.CommandLine",
+              "PackageNewVersion": "2.0.0-beta4.22272.1"
+            },
+            "line": 23,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "6b2c00ec-d29e-44a2-bd91-8496b26ed4e5",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.CommandLine, 2.0.0-beta4.22272.1. Add package reference to System.CommandLine, 2.0.0-beta4.22272.1",
+          "projectPath": "Office365.PacUtil.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "await BuildCommandLine()\r\n                    .UseHost(_ =\u003E Host.CreateDefaultBuilder(),\r\n                        host =\u003E\r\n                        {\r\n                            host.ConfigureServices(services =\u003E\r\n                            {\r\n                                services.AddSingleton\u003CIPacFileService, PacFileService\u003E();\r\n                            });\r\n                        })\r\n                    .UseDefaults()\r\n                    .CancelOnProcessTermination()\r\n                    .Build()\r\n                    .InvokeAsync(args);",
+              "protected": "M:System.CommandLine.Builder.CommandLineBuilderExtensions.UseDefaults(System.CommandLine.Builder.CommandLineBuilder)"
+            },
+            "kind": "File",
+            "path": "Program.cs",
+            "snippet": "await BuildCommandLine()\r\n                    .UseHost(_ =\u003E Host.CreateDefaultBuilder(),\r\n                        host =\u003E\r\n                        {\r\n                            host.ConfigureServices(services =\u003E\r\n                            {\r\n                                services.AddSingleton\u003CIPacFileService, PacFileService\u003E();\r\n                            });\r\n                        })\r\n                    .UseDefaults()\r\n                    .CancelOnProcessTermination()\r\n                    .Build()\r\n                    .InvokeAsync(args);",
+            "protectedSnippet": "M:System.CommandLine.Builder.CommandLineBuilderExtensions.UseDefaults(System.CommandLine.Builder.CommandLineBuilder)",
+            "label": "M:System.CommandLine.Builder.CommandLineBuilderExtensions.UseDefaults(System.CommandLine.Builder.CommandLineBuilder)",
+            "properties": {
+              "PackageId": "System.CommandLine",
+              "PackageNewVersion": "2.0.0-beta4.22272.1"
+            },
+            "line": 23,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "3b27477a-def3-43e4-85e2-a608233b4a79",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.CommandLine, 2.0.0-beta4.22272.1. Add package reference to System.CommandLine, 2.0.0-beta4.22272.1",
+          "projectPath": "Office365.PacUtil.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "await BuildCommandLine()\r\n                    .UseHost(_ =\u003E Host.CreateDefaultBuilder(),\r\n                        host =\u003E\r\n                        {\r\n                            host.ConfigureServices(services =\u003E\r\n                            {\r\n                                services.AddSingleton\u003CIPacFileService, PacFileService\u003E();\r\n                            });\r\n                        })\r\n                    .UseDefaults()\r\n                    .CancelOnProcessTermination()\r\n                    .Build()\r\n                    .InvokeAsync(args);",
+              "protected": "T:System.CommandLine.Builder.CommandLineBuilderExtensions"
+            },
+            "kind": "File",
+            "path": "Program.cs",
+            "snippet": "await BuildCommandLine()\r\n                    .UseHost(_ =\u003E Host.CreateDefaultBuilder(),\r\n                        host =\u003E\r\n                        {\r\n                            host.ConfigureServices(services =\u003E\r\n                            {\r\n                                services.AddSingleton\u003CIPacFileService, PacFileService\u003E();\r\n                            });\r\n                        })\r\n                    .UseDefaults()\r\n                    .CancelOnProcessTermination()\r\n                    .Build()\r\n                    .InvokeAsync(args);",
+            "protectedSnippet": "T:System.CommandLine.Builder.CommandLineBuilderExtensions",
+            "label": "T:System.CommandLine.Builder.CommandLineBuilderExtensions",
+            "properties": {
+              "PackageId": "System.CommandLine",
+              "PackageNewVersion": "2.0.0-beta4.22272.1"
+            },
+            "line": 23,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "d114ee13-68cf-4cd4-855d-914c3d606f56",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.CommandLine, 2.0.0-beta4.22272.1. Add package reference to System.CommandLine, 2.0.0-beta4.22272.1",
+          "projectPath": "Office365.PacUtil.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "await BuildCommandLine()\r\n                    .UseHost(_ =\u003E Host.CreateDefaultBuilder(),\r\n                        host =\u003E\r\n                        {\r\n                            host.ConfigureServices(services =\u003E\r\n                            {\r\n                                services.AddSingleton\u003CIPacFileService, PacFileService\u003E();\r\n                            });\r\n                        })\r\n                    .UseDefaults()\r\n                    .CancelOnProcessTermination()\r\n                    .Build()\r\n                    .InvokeAsync(args);",
+              "protected": "T:System.CommandLine.Builder.CommandLineBuilder"
+            },
+            "kind": "File",
+            "path": "Program.cs",
+            "snippet": "await BuildCommandLine()\r\n                    .UseHost(_ =\u003E Host.CreateDefaultBuilder(),\r\n                        host =\u003E\r\n                        {\r\n                            host.ConfigureServices(services =\u003E\r\n                            {\r\n                                services.AddSingleton\u003CIPacFileService, PacFileService\u003E();\r\n                            });\r\n                        })\r\n                    .UseDefaults()\r\n                    .CancelOnProcessTermination()\r\n                    .Build()\r\n                    .InvokeAsync(args);",
+            "protectedSnippet": "T:System.CommandLine.Builder.CommandLineBuilder",
+            "label": "T:System.CommandLine.Builder.CommandLineBuilder",
+            "properties": {
+              "PackageId": "System.CommandLine",
+              "PackageNewVersion": "2.0.0-beta4.22272.1"
+            },
+            "line": 23,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "fe7abedf-2090-42db-a48c-e1d221df9440",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.CommandLine, 2.0.0-beta4.22272.1. Add package reference to System.CommandLine, 2.0.0-beta4.22272.1",
+          "projectPath": "Office365.PacUtil.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "await BuildCommandLine()\r\n                    .UseHost(_ =\u003E Host.CreateDefaultBuilder(),\r\n                        host =\u003E\r\n                        {\r\n                            host.ConfigureServices(services =\u003E\r\n                            {\r\n                                services.AddSingleton\u003CIPacFileService, PacFileService\u003E();\r\n                            });\r\n                        })\r\n                    .UseDefaults()\r\n                    .CancelOnProcessTermination()\r\n                    .Build()\r\n                    .InvokeAsync(args);",
+              "protected": "M:System.CommandLine.Builder.CommandLineBuilderExtensions.CancelOnProcessTermination(System.CommandLine.Builder.CommandLineBuilder)"
+            },
+            "kind": "File",
+            "path": "Program.cs",
+            "snippet": "await BuildCommandLine()\r\n                    .UseHost(_ =\u003E Host.CreateDefaultBuilder(),\r\n                        host =\u003E\r\n                        {\r\n                            host.ConfigureServices(services =\u003E\r\n                            {\r\n                                services.AddSingleton\u003CIPacFileService, PacFileService\u003E();\r\n                            });\r\n                        })\r\n                    .UseDefaults()\r\n                    .CancelOnProcessTermination()\r\n                    .Build()\r\n                    .InvokeAsync(args);",
+            "protectedSnippet": "M:System.CommandLine.Builder.CommandLineBuilderExtensions.CancelOnProcessTermination(System.CommandLine.Builder.CommandLineBuilder)",
+            "label": "M:System.CommandLine.Builder.CommandLineBuilderExtensions.CancelOnProcessTermination(System.CommandLine.Builder.CommandLineBuilder)",
+            "properties": {
+              "PackageId": "System.CommandLine",
+              "PackageNewVersion": "2.0.0-beta4.22272.1"
+            },
+            "line": 23,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "4fc04128-3bc0-41fa-913f-478160fb1b3e",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.CommandLine, 2.0.0-beta4.22272.1. Add package reference to System.CommandLine, 2.0.0-beta4.22272.1",
+          "projectPath": "Office365.PacUtil.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "await BuildCommandLine()\r\n                    .UseHost(_ =\u003E Host.CreateDefaultBuilder(),\r\n                        host =\u003E\r\n                        {\r\n                            host.ConfigureServices(services =\u003E\r\n                            {\r\n                                services.AddSingleton\u003CIPacFileService, PacFileService\u003E();\r\n                            });\r\n                        })\r\n                    .UseDefaults()\r\n                    .CancelOnProcessTermination()\r\n                    .Build()\r\n                    .InvokeAsync(args);",
+              "protected": "T:System.CommandLine.Parsing.Parser"
+            },
+            "kind": "File",
+            "path": "Program.cs",
+            "snippet": "await BuildCommandLine()\r\n                    .UseHost(_ =\u003E Host.CreateDefaultBuilder(),\r\n                        host =\u003E\r\n                        {\r\n                            host.ConfigureServices(services =\u003E\r\n                            {\r\n                                services.AddSingleton\u003CIPacFileService, PacFileService\u003E();\r\n                            });\r\n                        })\r\n                    .UseDefaults()\r\n                    .CancelOnProcessTermination()\r\n                    .Build()\r\n                    .InvokeAsync(args);",
+            "protectedSnippet": "T:System.CommandLine.Parsing.Parser",
+            "label": "T:System.CommandLine.Parsing.Parser",
+            "properties": {
+              "PackageId": "System.CommandLine",
+              "PackageNewVersion": "2.0.0-beta4.22272.1"
+            },
+            "line": 23,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "c18974ef-be33-49f6-b1a3-63212a5988d7",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.CommandLine, 2.0.0-beta4.22272.1. Add package reference to System.CommandLine, 2.0.0-beta4.22272.1",
+          "projectPath": "Office365.PacUtil.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "await BuildCommandLine()\r\n                    .UseHost(_ =\u003E Host.CreateDefaultBuilder(),\r\n                        host =\u003E\r\n                        {\r\n                            host.ConfigureServices(services =\u003E\r\n                            {\r\n                                services.AddSingleton\u003CIPacFileService, PacFileService\u003E();\r\n                            });\r\n                        })\r\n                    .UseDefaults()\r\n                    .CancelOnProcessTermination()\r\n                    .Build()\r\n                    .InvokeAsync(args);",
+              "protected": "M:System.CommandLine.Builder.CommandLineBuilder.Build"
+            },
+            "kind": "File",
+            "path": "Program.cs",
+            "snippet": "await BuildCommandLine()\r\n                    .UseHost(_ =\u003E Host.CreateDefaultBuilder(),\r\n                        host =\u003E\r\n                        {\r\n                            host.ConfigureServices(services =\u003E\r\n                            {\r\n                                services.AddSingleton\u003CIPacFileService, PacFileService\u003E();\r\n                            });\r\n                        })\r\n                    .UseDefaults()\r\n                    .CancelOnProcessTermination()\r\n                    .Build()\r\n                    .InvokeAsync(args);",
+            "protectedSnippet": "M:System.CommandLine.Builder.CommandLineBuilder.Build",
+            "label": "M:System.CommandLine.Builder.CommandLineBuilder.Build",
+            "properties": {
+              "PackageId": "System.CommandLine",
+              "PackageNewVersion": "2.0.0-beta4.22272.1"
+            },
+            "line": 23,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "9ba11a6f-8b84-4472-8159-91d17620cd9b",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.CommandLine, 2.0.0-beta4.22272.1. Add package reference to System.CommandLine, 2.0.0-beta4.22272.1",
+          "projectPath": "Office365.PacUtil.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "await BuildCommandLine()\r\n                    .UseHost(_ =\u003E Host.CreateDefaultBuilder(),\r\n                        host =\u003E\r\n                        {\r\n                            host.ConfigureServices(services =\u003E\r\n                            {\r\n                                services.AddSingleton\u003CIPacFileService, PacFileService\u003E();\r\n                            });\r\n                        })\r\n                    .UseDefaults()\r\n                    .CancelOnProcessTermination()\r\n                    .Build()\r\n                    .InvokeAsync(args);",
+              "protected": "T:System.CommandLine.Parsing.ParserExtensions"
+            },
+            "kind": "File",
+            "path": "Program.cs",
+            "snippet": "await BuildCommandLine()\r\n                    .UseHost(_ =\u003E Host.CreateDefaultBuilder(),\r\n                        host =\u003E\r\n                        {\r\n                            host.ConfigureServices(services =\u003E\r\n                            {\r\n                                services.AddSingleton\u003CIPacFileService, PacFileService\u003E();\r\n                            });\r\n                        })\r\n                    .UseDefaults()\r\n                    .CancelOnProcessTermination()\r\n                    .Build()\r\n                    .InvokeAsync(args);",
+            "protectedSnippet": "T:System.CommandLine.Parsing.ParserExtensions",
+            "label": "T:System.CommandLine.Parsing.ParserExtensions",
+            "properties": {
+              "PackageId": "System.CommandLine",
+              "PackageNewVersion": "2.0.0-beta4.22272.1"
+            },
+            "line": 23,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "c4edddad-d58b-4a0a-83ae-eb17d2722d54",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.CommandLine, 2.0.0-beta4.22272.1. Add package reference to System.CommandLine, 2.0.0-beta4.22272.1",
+          "projectPath": "Office365.PacUtil.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "await BuildCommandLine()\r\n                    .UseHost(_ =\u003E Host.CreateDefaultBuilder(),\r\n                        host =\u003E\r\n                        {\r\n                            host.ConfigureServices(services =\u003E\r\n                            {\r\n                                services.AddSingleton\u003CIPacFileService, PacFileService\u003E();\r\n                            });\r\n                        })\r\n                    .UseDefaults()\r\n                    .CancelOnProcessTermination()\r\n                    .Build()\r\n                    .InvokeAsync(args);",
+              "protected": "M:System.CommandLine.Parsing.ParserExtensions.InvokeAsync(System.CommandLine.Parsing.Parser,System.String[],System.CommandLine.IConsole)"
+            },
+            "kind": "File",
+            "path": "Program.cs",
+            "snippet": "await BuildCommandLine()\r\n                    .UseHost(_ =\u003E Host.CreateDefaultBuilder(),\r\n                        host =\u003E\r\n                        {\r\n                            host.ConfigureServices(services =\u003E\r\n                            {\r\n                                services.AddSingleton\u003CIPacFileService, PacFileService\u003E();\r\n                            });\r\n                        })\r\n                    .UseDefaults()\r\n                    .CancelOnProcessTermination()\r\n                    .Build()\r\n                    .InvokeAsync(args);",
+            "protectedSnippet": "M:System.CommandLine.Parsing.ParserExtensions.InvokeAsync(System.CommandLine.Parsing.Parser,System.String[],System.CommandLine.IConsole)",
+            "label": "M:System.CommandLine.Parsing.ParserExtensions.InvokeAsync(System.CommandLine.Parsing.Parser,System.String[],System.CommandLine.IConsole)",
+            "properties": {
+              "PackageId": "System.CommandLine",
+              "PackageNewVersion": "2.0.0-beta4.22272.1"
+            },
+            "line": 23,
+            "column": 16
+          }
+        }
+      ],
+      "features": [
+        {
+          "featureId": "LegacyConfiguration",
+          "incidents": [
+            "0777c693-7bf3-44cf-8c97-98cfcb200946",
+            "00db292e-29f3-4491-be51-64d544d1ac67",
+            "3799b53a-8d4b-411f-9de1-0115c18a529c",
+            "a083c0ad-c785-48e0-a24f-b1c28f9ba982",
+            "650eb0f3-4cd2-42af-a592-e9543708d62f",
+            "fff43b4f-fe35-4e56-8fa4-1032863efede",
+            "f76ad8bf-db2a-48f5-b363-a1014921edc9",
+            "4e6cd3c5-c14d-4df9-a73d-175386240646",
+            "f66b6ff2-017b-400d-8521-9ead8d561191",
+            "882682ba-99ae-4b76-95f8-d131b147f9f6",
+            "a522688e-96c0-4b86-b766-37ad48e7aa29",
+            "62cd53bf-e1da-452f-888a-ff01542e1509",
+            "56959727-d257-45e1-86c8-323e6ee4b0af",
+            "9ebb5c8a-2c79-475b-944a-0bf96fdfb50a",
+            "0ea4532c-cb24-44a5-b2a2-07863589576e",
+            "2ebc1f27-0b09-458f-8b53-e13a7cd38a10",
+            "ef1d23d8-f567-45b1-ab19-0cf571aff4e6",
+            "84bfa0dd-9f2d-4061-bab0-4fb23d063514"
+          ]
+        }
+      ]
+    }
+  ],
+  "rules": {
+    "NuGet.0002": {
+      "id": "NuGet.0002",
+      "isFeature": false,
+      "description": "NuGet package upgrade is recommended for selected target framework.\n\nStandard .NET packages are recommended to have versions matching version of .NET that project targets.\n\nSome other packages also are known to work better for selected target frameworks.",
+      "label": "NuGet package upgrade is recommended",
+      "severity": "Potential",
+      "effort": 1,
+      "links": [
+        {
+          "url": "https://go.microsoft.com/fwlink/?linkid=2262530",
+          "isCustom": false
+        }
+      ]
+    },
+    "Project.0002": {
+      "id": "Project.0002",
+      "isFeature": false,
+      "description": "Project\u0027s target framework(s) needs to be changed to the new target framework that you selected for this upgrade.\n\nDuring upgrade target framework will be adjusted to corresponding platform when applicable. In some cases project would result in multiple target frameworks after the upgrade if it was using features that now have their own platforms in modern .NET frameworks (windows, iOS, Android etc).",
+      "label": "Project\u0027s target framework(s) needs to be changed",
+      "severity": "Mandatory",
+      "effort": 1,
+      "links": [
+        {
+          "title": "Overview of porting from .NET Framework to .NET",
+          "url": "https://go.microsoft.com/fwlink/?linkid=2265227",
+          "isCustom": false
+        },
+        {
+          "title": ".NET project SDKs",
+          "url": "https://go.microsoft.com/fwlink/?linkid=2265226",
+          "isCustom": false
+        }
+      ]
+    },
+    "Api.0003": {
+      "id": "Api.0003",
+      "isFeature": false,
+      "description": "API has a behavioral change in selected .NET version: code and binaries may behave differently at runtime without needing recompilation, but the new behavior might be undesirable and require updates.",
+      "label": "Behavioral change in selected .NET version",
+      "severity": "Potential",
+      "effort": 1
+    },
+    "Api.0002": {
+      "id": "Api.0002",
+      "isFeature": false,
+      "description": "API is source incompatible for selected .NET version: requires code changes to compile successfully when targeting a new version, such as removing obsolete APIs or changing method signatures.",
+      "label": "Source incompatible for selected .NET version",
+      "severity": "Potential",
+      "effort": 1,
+      "links": [
+        {
+          "title": "Breaking changes in .NET",
+          "url": "https://go.microsoft.com/fwlink/?linkid=2262679",
+          "isCustom": false
+        }
+      ]
+    },
+    "LegacyConfiguration": {
+      "id": "LegacyConfiguration",
+      "isFeature": false,
+      "description": "Legacy XML-based configuration system (app.config/web.config) that has been replaced by a more flexible configuration model in .NET Core. The old system was rigid and XML-based. Migrate to Microsoft.Extensions.Configuration with JSON/environment variables; use System.Configuration.ConfigurationManager NuGet package as interim bridge if needed.",
+      "label": "Legacy Configuration System",
+      "severity": "Mandatory",
+      "effort": 2,
+      "links": [
+        {
+          "title": "Configuration in .NET",
+          "url": "https://go.microsoft.com/fwlink/?linkid=2341702",
+          "isCustom": false
+        }
+      ]
+    }
+  }
+}
